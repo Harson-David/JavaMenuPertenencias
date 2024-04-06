@@ -1,12 +1,6 @@
 package Models;
 
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Time;
-import java.sql.Types;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDate;
@@ -15,7 +9,8 @@ import java.time.LocalTime;
 
 public class BitacoraDAO {
 
-private static final String INSERT_QUERY = "INSERT INTO bitacora (bitacora_fecha_ingreso, bitacora_hora_entrada, bitacora_hora_salida, bitacora_tipo, bitacora_descripcion, bitacora_fecha_salida, bitacora_hora_salida_equipo_sena, bitacora_motivo_salida, bitacora_motivo_ingreso) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";    private static final String SELECT_ALL_QUERY = "SELECT bitacora_id, bitacora_fecha_ingreso, bitacora_hora_entrada, bitacora_hora_salida, bitacora_tipo, bitacora_descripcion, bitacora_fecha_salida, bitacora_hora_salida_equipo_sena, bitacora_motivo_salida, bitacora_motivo_ingreso FROM bitacora";
+    private static final String INSERT_QUERY = "INSERT INTO bitacora (bitacora_fecha_ingreso, bitacora_hora_entrada, bitacora_hora_salida, bitacora_tipo, bitacora_descripcion, bitacora_fecha_salida, bitacora_hora_salida_equipo_sena, bitacora_motivo_salida, bitacora_motivo_ingreso) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    private static final String SELECT_ALL_QUERY = "SELECT bitacora_id, bitacora_fecha_ingreso, bitacora_hora_entrada, bitacora_hora_salida, bitacora_tipo, bitacora_descripcion, bitacora_fecha_salida, bitacora_hora_salida_equipo_sena, bitacora_motivo_salida, bitacora_motivo_ingreso FROM bitacora";
     private static final String SELECT_ONE_QUERY = "SELECT bitacora_id, bitacora_fecha_ingreso, bitacora_hora_entrada, bitacora_hora_salida, bitacora_tipo, bitacora_descripcion, bitacora_fecha_salida, bitacora_hora_salida_equipo_sena, bitacora_motivo_salida, bitacora_motivo_ingreso FROM bitacora WHERE bitacora_id=?";
     private static final String UPDATE_QUERY = "UPDATE bitacora SET bitacora_fecha_ingreso=?, bitacora_hora_entrada=?, bitacora_hora_salida=?, bitacora_tipo=?, bitacora_descripcion=?, bitacora_fecha_salida=?, bitacora_hora_salida_equipo_sena=?, bitacora_motivo_salida=?, bitacora_motivo_ingreso=? WHERE bitacora_id=?";
     private static final String DELETE_QUERY = "DELETE FROM bitacora WHERE bitacora_id=?";
@@ -35,16 +30,13 @@ private static final String INSERT_QUERY = "INSERT INTO bitacora (bitacora_fecha
         return new Bitacora(id, fechaIngreso, horaEntrada, horaSalida, tipo, descripcion, fechaSalida, horaSalidaEquipoSena, motivoSalida, motivoIngreso);
     }
 
-    public static void create(Bitacora bitacora) {
+    public static Bitacora create(Bitacora bitacora) {
         if (bitacora == null) {
             throw new IllegalArgumentException("El objeto bitacora es nulo.");
         }
 
-        Connection connection = null;
-        PreparedStatement statement = null;
-        try {
-            connection = DataBase.getConnection();
-            statement = connection.prepareStatement(INSERT_QUERY);
+        try (Connection connection = DataBase.getConnection(); PreparedStatement statement = connection.prepareStatement(INSERT_QUERY, Statement.RETURN_GENERATED_KEYS)) {
+
             statement.setDate(1, bitacora.getFechaIngreso());
             statement.setTime(2, bitacora.getHoraEntrada());
             statement.setTime(3, bitacora.getHoraSalida());
@@ -54,38 +46,34 @@ private static final String INSERT_QUERY = "INSERT INTO bitacora (bitacora_fecha
             statement.setTime(7, bitacora.getHoraSalidaEquipoSENA());
             statement.setString(8, bitacora.getMotivo_salida());
             statement.setString(9, bitacora.getMotivoIngreso());
-            statement.executeUpdate();
-            System.out.println("Bitácora creada: \n" + bitacora.toString());
+
+            int rowsAffected = statement.executeUpdate();
+
+            if (rowsAffected > 0) {
+                try (ResultSet generatedKeys = statement.getGeneratedKeys()) {
+                    if (generatedKeys.next()) {
+                        int id = generatedKeys.getInt(1);
+                        bitacora.setBitacoraId(id); // Asignar el ID generado a la instancia de Bitacora
+                    }
+                }
+            }
+
+            // System.out.println("Bitácora creada: \n" + bitacora);
+            return bitacora;
+
         } catch (SQLException e) {
             throw new RuntimeException("Error al crear la bitácora.", e);
-        } finally {
-            if (statement != null) {
-                try {
-                    statement.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
         }
     }
 
 
-    
 // BitacoraDAO.java
 
 
     public static void createBit(Bitacora bitacora) {
         String query = "INSERT INTO bitacora (bitacora_id, bitacora_fecha_ingreso, bitacora_hora_entrada, bitacora_hora_salida) VALUES (?, ?, ?, ?)";
 
-        try (Connection connection = DataBase.getConnection();
-             PreparedStatement statement = connection.prepareStatement(query)) {
+        try (Connection connection = DataBase.getConnection(); PreparedStatement statement = connection.prepareStatement(query)) {
 
             statement.setInt(1, bitacora.getBitacoraId());
             statement.setDate(2, bitacora.getDateIngreso());
@@ -104,7 +92,7 @@ private static final String INSERT_QUERY = "INSERT INTO bitacora (bitacora_fecha
         }
     }
 
-//        private int generateRandomId() {
+    //        private int generateRandomId() {
 //        int min = 100000;
 //        int max = 999999;
 //        int randomNum = min + (int) (Math.random() * ((max - min) + 1));

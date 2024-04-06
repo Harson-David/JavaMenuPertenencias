@@ -3,11 +3,14 @@ package Models;
 
 
 public class Pertenencias {
-    
+
     private String pertenencia_id;
     private String tipo;
     private String descripcion;
     private int userId;
+
+    public Pertenencias() {
+    }
 
     public Pertenencias(String pertenencia_id, String tipo, String descripcion, int userId) {
         this.pertenencia_id = pertenencia_id;
@@ -26,8 +29,6 @@ public class Pertenencias {
         this.tipo = tipo;
         this.descripcion = descripcion;
     }
-    
-    
 
 
     public String getPertenencia_id() {
@@ -66,7 +67,6 @@ public class Pertenencias {
     public String toString() {
         return "Pertenencias{" + "pertenencia_id=" + pertenencia_id + ", tipo=" + tipo + ", descripcion=" + descripcion + ", userId=" + userId + '}';
     }
-    
-    
-    
+
+
 }

@@ -13,23 +13,28 @@ public class ControllerPertenencias {
         this.pertenenciasDAO = new PertenenciasDAO();
     }
 
-    public void create(Pertenencias pertenencia) {
-        pertenenciasDAO.create(pertenencia);
+    public Pertenencias create(Pertenencias pertenencia) {
+        PertenenciasDAO.create(pertenencia);
+        return pertenencia;
+    }
+
+    public void create_bitacora_pertenencia(List<String> pertenencia_ids, int bitacora_id) {
+        PertenenciasDAO.create_bitacora_pertenencia(pertenencia_ids, bitacora_id);
     }
 
     public List<Pertenencias> findAll() {
-        return pertenenciasDAO.findAll();
+        return PertenenciasDAO.findAll();
     }
 
     public Pertenencias findOne(String pertenenciaId) {
-        return pertenenciasDAO.findOne(pertenenciaId);
+        return PertenenciasDAO.findOne(pertenenciaId);
     }
 
     public void update(Pertenencias pertenencia) {
-        pertenenciasDAO.update(pertenencia);
+        PertenenciasDAO.update(pertenencia);
     }
 
     public void delete(String pertenenciaId) {
-        pertenenciasDAO.delete(pertenenciaId);
+        PertenenciasDAO.delete(pertenenciaId);
     }
 }

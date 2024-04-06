@@ -14,27 +14,28 @@ public class ControllerBitacora {
         this.bitacoraDAO = new BitacoraDAO();
     }
 
-    public void create(Bitacora bitacora) {
-        bitacoraDAO.create(bitacora);
+    public Bitacora create(Bitacora bitacora) {
+        BitacoraDAO.create(bitacora);
+        return bitacora;
     }
 
     public void createBitaco(Bitacora bitacora) {
-        bitacoraDAO.createBit(bitacora);
+        BitacoraDAO.createBit(bitacora);
     }
 
     public List<Bitacora> findAll() {
-        return bitacoraDAO.findAll();
+        return BitacoraDAO.findAll();
     }
 
     public Bitacora findOne(int bitacoraId) {
-        return bitacoraDAO.findOne(bitacoraId);
+        return BitacoraDAO.findOne(bitacoraId);
     }
 
     public void update(Bitacora bitacora) {
-        bitacoraDAO.update(bitacora);
+        BitacoraDAO.update(bitacora);
     }
 
     public void delete(int bitacoraId) {
-        bitacoraDAO.delete(bitacoraId);
+        BitacoraDAO.delete(bitacoraId);
     }
 }

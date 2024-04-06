@@ -1,9 +1,6 @@
 package Models;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -15,11 +12,9 @@ public class PertenenciasDAO {
     private static final String SELECT_ONE_QUERY = "SELECT pertenencia_id, pertenencia_tipo, pertenencia_descripcion, idUsuario FROM pertenencias WHERE pertenencia_id=?";
     private static final String UPDATE_QUERY = "UPDATE pertenencias SET pertenencia_tipo=?, pertenencia_descripcion=?, idUsuario=? WHERE pertenencia_id=?";
     private static final String DELETE_QUERY = "DELETE FROM pertenencias WHERE pertenencia_id=?";
-    private static final String SELECT_BY_USER_AND_TYPE_QUERY
-            = "SELECT pertenencia_id, pertenencia_tipo, pertenencia_descripcion, idUsuario "
-            + "FROM pertenencias "
-            + "JOIN users ON pertenencias.idUsuario = users.user_id "
-            + "WHERE users.user_rol = ? AND users.user_id = ?";
+    private static final String SELECT_BY_USER_AND_TYPE_QUERY = "SELECT pertenencia_id, pertenencia_tipo, pertenencia_descripcion, idUsuario " + "FROM pertenencias " + "JOIN users ON pertenencias.idUsuario = users.user_id " + "WHERE users.user_rol = ? AND users.user_id = ?";
+
+    private static final String INSERT_BITACORA_QUERY = "INSERT INTO pertenencias_bitacora (pertenencia_id, bitacora_id) VALUES (?, ?)";
 
     public static Pertenencias mapResultSetToPertenencia(ResultSet resultSet) throws SQLException {
         String pertenenciaId = resultSet.getString("pertenencia_id");
@@ -29,27 +24,68 @@ public class PertenenciasDAO {
         return new Pertenencias(pertenenciaId, tipo, descripcion, userId);
     }
 
-    public static void create(Pertenencias pertenencia) {
+    public static Pertenencias create(Pertenencias pertenencia) {
         if (pertenencia == null) {
-            System.out.println("El objeto pertenencia es nulo.");
-            return;
+            throw new IllegalArgumentException("El objeto pertenencia es nulo.");
         }
 
         UUID uuid = UUID.randomUUID();
-        String pertenenciaId = uuid.toString();
+        String pertenencia_id = uuid.toString();
 
-        try (Connection connection = DataBase.getConnection()) {
-            PreparedStatement statement = connection.prepareStatement(INSERT_QUERY);
-            statement.setString(1, pertenenciaId);
+        try (Connection connection = DataBase.getConnection(); PreparedStatement statement = connection.prepareStatement(INSERT_QUERY, Statement.RETURN_GENERATED_KEYS)) {
+            statement.setString(1, pertenencia_id);
             statement.setString(2, pertenencia.getTipo());
             statement.setString(3, pertenencia.getDescripcion());
             statement.setInt(4, pertenencia.getUserId());
-            statement.executeUpdate();
-            System.out.println("Pertenencia creada: \n" + pertenencia.toString());
+
+            int rowsAffected = statement.executeUpdate();
+
+            if (rowsAffected > 0) {
+                try (ResultSet generatedKeys = statement.getGeneratedKeys()) {
+                    if (generatedKeys.next()) {
+                        String id = generatedKeys.getString(1);
+                        pertenencia.setPertenencia_id(id); // Asignar el ID generado a la instancia de Pertenencias
+                    }
+                }
+            }
+
+            return pertenencia;
+
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new RuntimeException("Error al crear la pertenencia.", e);
         }
     }
+
+
+    public static void create_bitacora_pertenencia(List<String> pertenencia_ids, int bitacora_id) {
+        if (pertenencia_ids == null || pertenencia_ids.isEmpty()) {
+            throw new IllegalArgumentException("La lista de IDs de pertenencia no puede ser nula o vacía.");
+        }
+
+        try (Connection connection = DataBase.getConnection(); PreparedStatement statement = connection.prepareStatement(INSERT_BITACORA_QUERY)) {
+            for (String pertenencia_id : pertenencia_ids) {
+                statement.setString(1, pertenencia_id);
+                statement.setInt(2, bitacora_id);
+
+                statement.addBatch(); // Agregar la operación a un lote para ejecutarla después
+            }
+
+            // Ejecutar todas las operaciones de inserción en un solo lote
+            int[] rowsAffected = statement.executeBatch();
+
+            // Verificar si todas las operaciones de inserción se realizaron correctamente
+            for (int affected : rowsAffected) {
+                if (affected == 0) {
+                    throw new SQLException("No se pudo crear la entrada en la bitácora de pertenencia.");
+                }
+            }
+
+            System.out.println("Inserción en la bitácora de pertenencia exitosa.");
+        } catch (SQLException e) {
+            throw new RuntimeException("Error al crear la entrada en la bitácora de pertenencia.", e);
+        }
+    }
+
 
     public static List<Pertenencias> findAll() {
         List<Pertenencias> pertenenciasList = new ArrayList<>();

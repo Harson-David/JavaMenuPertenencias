@@ -7,12 +7,6 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 public class Bitacora {
-    
-    private int bitacoraID;
-    private String date;
-    private String hour;
-    private String hourExit;
-
 
     private int bitacoraId;
     private Date fechaIngreso;
@@ -24,70 +18,25 @@ public class Bitacora {
     private Time horaSalidaEquipoSENA;
     private String motivo_salida;
     private String motivoIngreso;
-    
-    
+
+
+    public Bitacora() {
+    }
 
 
     public Bitacora(int bitacoraId, Date fechaIngreso, Time horaEntrada, Time horaSalida, String tipo, String descripcion, Date fechaSalida, Time horaSalidaEquipoSENA, String motivo_salida, String motivoIngreso) {
-    this.bitacoraId = bitacoraId;
-    this.fechaIngreso = fechaIngreso;
-    this.horaEntrada = horaEntrada;
-    this.horaSalida = horaSalida;
-    this.tipo = tipo;
-    this.descripcion = descripcion;
-    this.fechaSalida = fechaSalida;
-    this.horaSalidaEquipoSENA = horaSalidaEquipoSENA;
-    this.motivo_salida = motivo_salida;
-    this.motivoIngreso = motivoIngreso;
-}
-
-
-    public Bitacora(int bitacoraID, Date fechaIngreso, String date, String hour) {
-        this.bitacoraID = bitacoraID;
+        this.bitacoraId = bitacoraId;
         this.fechaIngreso = fechaIngreso;
-        this.date = date;
-        this.hour = hour;
-    }
-    
-    
-
-    public int getBitacoraID() {
-        return bitacoraID;
-    }
-
-    public void setBitacoraID(int bitacoraID) {
-        this.bitacoraID = bitacoraID;
+        this.horaEntrada = horaEntrada;
+        this.horaSalida = horaSalida;
+        this.tipo = tipo;
+        this.descripcion = descripcion;
+        this.fechaSalida = fechaSalida;
+        this.horaSalidaEquipoSENA = horaSalidaEquipoSENA;
+        this.motivo_salida = motivo_salida;
+        this.motivoIngreso = motivoIngreso;
     }
 
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public String getHour() {
-        return hour;
-    }
-
-    public void setHour(String hour) {
-        this.hour = hour;
-    }
-
-    public String getHourExit() {
-        return hourExit;
-    }
-
-    public void setHourExit(String hourExit) {
-        this.hourExit = hourExit;
-    }
-
-    
-
-    
-
-    
 
     public int getBitacoraId() {
         return bitacoraId;
@@ -120,7 +69,6 @@ public class Bitacora {
     public void setHoraSalida(Time horaSalida) {
         this.horaSalida = horaSalida;
     }
-
 
 
     public String getTipo() {
@@ -182,19 +130,19 @@ public class Bitacora {
         this.horaEntrada = horaEntrada;
         this.horaSalida = horaSalida;
     }
-    
-    
+
+
     public Bitacora(Date fechaIngreso, Time horaEntrada, Time horaSalida) {
         // Verifica si se proporciona una fecha de ingreso, si no, utiliza la fecha actual
         this.fechaIngreso = (fechaIngreso != null) ? fechaIngreso : Date.valueOf(LocalDate.now());
-        
+
         // Verifica si se proporciona una hora de entrada, si no, utiliza la hora actual
         this.horaEntrada = (horaEntrada != null) ? horaEntrada : Time.valueOf(LocalTime.now());
-        
+
         this.horaSalida = horaSalida;
     }
-    
-    
+
+
     public Date getDateIngreso() {
         return Date.valueOf(LocalDate.now());
     }
@@ -210,6 +158,7 @@ public class Bitacora {
     public void setHourEntrada(Time horaEntrada) {
         this.horaEntrada = Time.valueOf(LocalTime.now());
     }
+
     public Time getHourSalida() {
         return Time.valueOf(LocalTime.now());
     }
