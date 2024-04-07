@@ -26,7 +26,7 @@ public class ControllerPertenencias {
     }
 
     public void update(Pertenencias pertenencia) {
-        pertenenciasDAO.update(pertenencia);
+        pertenenciasDAO.updatePer(pertenencia);
     }
 
     public void delete(String pertenenciaId) {

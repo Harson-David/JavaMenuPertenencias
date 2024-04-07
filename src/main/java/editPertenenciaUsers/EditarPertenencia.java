@@ -27,6 +27,9 @@ public class EditarPertenencia extends javax.swing.JFrame {
     public EditarPertenencia() {
         initComponents();
         control = new ControllerPertenencias();
+        userID.setVisible(false);
+        userlabel.setVisible(false);
+                
     }
 
     /**
@@ -47,8 +50,8 @@ public class EditarPertenencia extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         descripcion = new javax.swing.JTextArea();
         label32 = new java.awt.Label();
-        USER = new javax.swing.JTextField();
-        label33 = new java.awt.Label();
+        userID = new javax.swing.JTextField();
+        userlabel = new java.awt.Label();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -104,19 +107,19 @@ public class EditarPertenencia extends javax.swing.JFrame {
         label32.setForeground(new java.awt.Color(255, 255, 255));
         label32.setText("TIPO DE PERTENENCIA");
 
-        USER.setBackground(new java.awt.Color(255, 255, 255));
-        USER.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        USER.setForeground(new java.awt.Color(0, 0, 0));
-        USER.addActionListener(new java.awt.event.ActionListener() {
+        userID.setBackground(new java.awt.Color(255, 255, 255));
+        userID.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        userID.setForeground(new java.awt.Color(0, 0, 0));
+        userID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                USERActionPerformed(evt);
+                userIDActionPerformed(evt);
             }
         });
 
-        label33.setAlignment(java.awt.Label.CENTER);
-        label33.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        label33.setForeground(new java.awt.Color(255, 255, 255));
-        label33.setText("ID USUARIO");
+        userlabel.setAlignment(java.awt.Label.CENTER);
+        userlabel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        userlabel.setForeground(new java.awt.Color(255, 255, 255));
+        userlabel.setText("ID USUARIO");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -125,17 +128,17 @@ public class EditarPertenencia extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(89, 89, 89)
-                                .addComponent(label32, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(73, 73, 73)
-                                .addComponent(tipo, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                .addComponent(tipo, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                .addComponent(label32, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)))
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(label33, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(USER, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(userlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(userID, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
@@ -163,11 +166,11 @@ public class EditarPertenencia extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(label32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(userlabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(39, 39, 39)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tipo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(USER, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(userID, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(73, 73, 73)
                 .addComponent(label31, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
@@ -200,9 +203,9 @@ public class EditarPertenencia extends javax.swing.JFrame {
     private void editarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarActionPerformed
         String tipoPerte = tipo.getText();
         String des = descripcion.getText();
-        int num = Integer.parseInt(USER.getText());
+        int num = Integer.parseInt(userID.getText());
 
-        Pertenencias per = new Pertenencias(tipoPerte, des, num);
+        Pertenencias per = new Pertenencias(tipoPerte, des);
         
         control.update(per);
         TablaPertenencias tabla = new TablaPertenencias();
@@ -253,9 +256,9 @@ public class EditarPertenencia extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tipoActionPerformed
 
-    private void USERActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_USERActionPerformed
+    private void userIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userIDActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_USERActionPerformed
+    }//GEN-LAST:event_userIDActionPerformed
 
     /**
      * @param args the command line arguments
@@ -294,7 +297,6 @@ public class EditarPertenencia extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField USER;
     private java.awt.Button button2;
     private javax.swing.JTextArea descripcion;
     private java.awt.Button editar;
@@ -303,7 +305,8 @@ public class EditarPertenencia extends javax.swing.JFrame {
     private java.awt.Label label3;
     private java.awt.Label label31;
     private java.awt.Label label32;
-    private java.awt.Label label33;
     private javax.swing.JTextField tipo;
+    private javax.swing.JTextField userID;
+    private java.awt.Label userlabel;
     // End of variables declaration//GEN-END:variables
 }

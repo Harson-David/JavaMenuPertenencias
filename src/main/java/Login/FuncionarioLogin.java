@@ -24,11 +24,24 @@ public class FuncionarioLogin extends javax.swing.JFrame {
         initComponents();
     }
 
+
     private String tipoDocumento;
 
+    public void setTipoDocumentoSilently(String tipoDocumento) {
+        this.tipoDocumento = tipoDocumento;
+    }
+
+    // Método para establecer el tipo de documento 
     public void setTipoDocumento(String tipoDocumento) {
         this.tipoDocumento = tipoDocumento;
-        TipoDocumento.setText("Tipo de documento: " + tipoDocumento);
+        // Actualizar la etiqueta solo si la interfaz está visible por la terminal
+        if (isVisible()) {
+            TipoDocumento.setText("Tipo de documento: " + tipoDocumento);
+        }
+    }
+
+    public String getTipoDocumento() {
+        return tipoDocumento;
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -52,7 +65,7 @@ public class FuncionarioLogin extends javax.swing.JFrame {
         button1.setBackground(new java.awt.Color(0, 51, 51));
         button1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         button1.setForeground(new java.awt.Color(255, 255, 255));
-        button1.setLabel("Editar Informacion Pertenencia");
+        button1.setLabel("Editar Pertenencia");
         button1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button1ActionPerformed(evt);
@@ -187,10 +200,21 @@ public class FuncionarioLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
-        TablaPertenencias tabla = new TablaPertenencias();
-        tabla.setLocationRelativeTo(null);
-        tabla.setVisible(true);
-        dispose();
+    // Crear una instancia de TablaPertenencias
+    TablaPertenencias tabla = new TablaPertenencias();
+
+    // Obtener el userId de LoginEntradaUsers
+    int userId = LoginEntradaUsers.userId;
+
+    // Puedes hacer lo que necesites con userId, por ejemplo, pasarlo a TablaPertenencias
+    tabla.setUserId(userId);
+
+    // Mostrar la ventana de TablaPertenencias
+    tabla.setLocationRelativeTo(null);
+    tabla.setVisible(true);
+
+    // Cerrar la ventana actual
+    dispose();
     }//GEN-LAST:event_button1ActionPerformed
 
     private void button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4ActionPerformed

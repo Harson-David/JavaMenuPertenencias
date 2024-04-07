@@ -15,11 +15,14 @@ public class PertenenciasDAO {
     private static final String SELECT_ONE_QUERY = "SELECT pertenencia_id, pertenencia_tipo, pertenencia_descripcion, idUsuario FROM pertenencias WHERE pertenencia_id=?";
     private static final String UPDATE_QUERY = "UPDATE pertenencias SET pertenencia_tipo=?, pertenencia_descripcion=?, idUsuario=? WHERE pertenencia_id=?";
     private static final String DELETE_QUERY = "DELETE FROM pertenencias WHERE pertenencia_id=?";
-    private static final String SELECT_BY_USER_AND_TYPE_QUERY
-            = "SELECT pertenencia_id, pertenencia_tipo, pertenencia_descripcion, idUsuario "
-            + "FROM pertenencias "
-            + "JOIN users ON pertenencias.idUsuario = users.user_id "
-            + "WHERE users.user_rol = ? AND users.user_id = ?";
+private static final String SELECT_BY_USER_AND_TYPE_QUERY =
+        "SELECT p.pertenencia_id, p.pertenencia_tipo, p.pertenencia_descripcion, p.idUsuario " +
+        "FROM pertenencias p " +
+        "JOIN pertenencias_bitacora pb ON p.pertenencia_id = pb.pertenencia_id " +
+        "JOIN bitacora b ON pb.bitacora_id = b.bitacora_id " +
+        "JOIN users u ON p.idUsuario = u.user_id " +
+        "WHERE u.user_rol = ? AND u.user_id = ?";
+
 
     public static Pertenencias mapResultSetToPertenencia(ResultSet resultSet) throws SQLException {
         String pertenenciaId = resultSet.getString("pertenencia_id");
@@ -92,6 +95,20 @@ public class PertenenciasDAO {
             e.printStackTrace();
         }
     }
+    
+    
+        public static void updatePer(Pertenencias pertenencia) {
+        try (Connection connection = DataBase.getConnection(); PreparedStatement statement = connection.prepareStatement(UPDATE_QUERY)) {
+            statement.setString(1, pertenencia.getTipo());
+            statement.setString(2, pertenencia.getDescripcion());
+            //statement.setInt(3, pertenencia.getUserId());
+            //statement.setString(4, pertenencia.getPertenencia_id());
+            statement.executeUpdate();
+            System.out.println("Pertenencia actualizada: " + pertenencia.toString());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
     public static void disableForeignKeyChecks() throws SQLException {
         try (Connection connection = DataBase.getConnection(); PreparedStatement statement = connection.prepareStatement("SET FOREIGN_KEY_CHECKS=0")) {
@@ -116,24 +133,22 @@ public class PertenenciasDAO {
         }
     }
 
-    public static List<Pertenencias> findByUserAndType(int userId, String userType) {
-        List<Pertenencias> pertenencias = new ArrayList<>();
-        try {
-            Connection connection = DataBase.getConnection();
-            PreparedStatement statement = connection.prepareStatement(SELECT_BY_USER_AND_TYPE_QUERY);
-            statement.setInt(1, userId);
-            statement.setString(2, userType);
-            ResultSet resultSet = statement.executeQuery();
+public static List<Pertenencias> findByUserAndType(int userId, String userType) {
+    List<Pertenencias> pertenencias = new ArrayList<>();
+    try (Connection connection = DataBase.getConnection(); PreparedStatement statement = connection.prepareStatement(SELECT_BY_USER_AND_TYPE_QUERY)) {
+        statement.setString(1, userType);
+        statement.setInt(2, userId);
+        try (ResultSet resultSet = statement.executeQuery()) {
             while (resultSet.next()) {
                 Pertenencias pertenencia = mapResultSetToPertenencia(resultSet);
                 pertenencias.add(pertenencia);
             }
-            resultSet.close();
-            statement.close();
-            connection.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
-        return pertenencias;
+    } catch (SQLException e) {
+        e.printStackTrace();
     }
+    return pertenencias;
+}
+
+
 }

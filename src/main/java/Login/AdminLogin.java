@@ -201,9 +201,9 @@ public class AdminLogin extends javax.swing.JFrame {
                     .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(button10, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(79, 79, 79)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(button11, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(retirar, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(button11, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
+                    .addComponent(retirar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(button8, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -267,10 +267,21 @@ public class AdminLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_button10ActionPerformed
 
     private void button11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button11ActionPerformed
-        TablaPertenencias tabla = new TablaPertenencias();
-        tabla.setLocationRelativeTo(null);
-        tabla.setVisible(true);
-        dispose();
+    // Crear una instancia de TablaPertenencias
+    TablaPertenencias tabla = new TablaPertenencias();
+
+    // Obtener el userId de LoginEntradaUsers
+    int userId = LoginEntradaUsers.userId;
+
+    // Puedes hacer lo que necesites con userId, por ejemplo, pasarlo a TablaPertenencias
+    tabla.setUserId(userId);
+
+    // Mostrar la ventana de TablaPertenencias
+    tabla.setLocationRelativeTo(null);
+    tabla.setVisible(true);
+
+    // Cerrar la ventana actual
+    dispose();
     }//GEN-LAST:event_button11ActionPerformed
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
@@ -318,6 +329,8 @@ public class AdminLogin extends javax.swing.JFrame {
             }
         });
     }
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Label TipoDocumento;

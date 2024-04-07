@@ -1,25 +1,31 @@
 package editPertenenciaUsers;
 
+import AgregarPertenencias.RegistrarPertenencia;
 import Login.AdminLogin;
 import Login.AprendizLogin;
 import Login.ExternoLogin;
 import Login.FuncionarioLogin;
 import Login.InstructorLogin;
 import Login.LoginEntradaUsers;
+import Models.Bitacora;
+import Models.BitacoraDAO;
 import Models.Pertenencias;
 import Models.PertenenciasDAO;
 import Views.BitacoraPanelTest;
+import editPertenenciaUsers.EditarPertenencia;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.sql.Date;
+import java.sql.Time;
 import java.util.List;
 import java.util.UUID;
 
 public class TablaPertenencias extends JFrame {
 
     private final String rol = LoginEntradaUsers.tipoUsuario;
-    private final int userId = LoginEntradaUsers.userId;
+    private int userId = LoginEntradaUsers.userId;
     private JTable table;
     private DefaultTableModel model;
 
@@ -32,7 +38,7 @@ public class TablaPertenencias extends JFrame {
     private void initComponents() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("Tabla de Pertenencias");
-        setSize(600, 400);
+        setSize(1920, 780);
         setLocationRelativeTo(null);
 
         JPanel buttonPanel = new JPanel();
@@ -45,9 +51,11 @@ public class TablaPertenencias extends JFrame {
         table = new JTable();
         scrollPane.setViewportView(table);
 
-        JButton addButton = new JButton("Agregar");
-        JButton editButton = new JButton("Editar");
-        JButton deleteButton = new JButton("Eliminar");
+        JButton addButton = new JButton("Agregar Pertenencia");
+        JButton getoutButton = new JButton("Sacar Pertenencia");
+        JButton readdButton = new JButton("Reintregrar Pertenencia");
+        JButton editButton = new JButton("Editar Pertenencia");
+        JButton deleteButton = new JButton("Eliminar Pertenencia");
         JButton backButton = new JButton("Volver al Menú Principal");
 
         buttonPanel.add(addButton);
@@ -60,40 +68,85 @@ public class TablaPertenencias extends JFrame {
         getContentPane().add(buttonPanel, BorderLayout.SOUTH);
 
         addButton.addActionListener(e -> addPertenencia());
+        getoutButton.addActionListener(e -> getoutPertenencia());
+        readdButton.addActionListener(e -> readdPertenencia());
         editButton.addActionListener(e -> editPertenencia());
         deleteButton.addActionListener(e -> deletePertenencia());
         backButton.addActionListener(e -> goBackToMainMenu());
     }
 
-    public void loadPertenenciasByUser(int userId) {
-        model.setRowCount(0);
-        List<Pertenencias> pertenencias = PertenenciasDAO.findByUserAndType(userId, rol);
-        populateTable(pertenencias);
+public void loadPertenencias() {
+    model.setRowCount(0);
+    // Verificar el tipo de usuario y realizar operaciones correspondientes
+    switch (rol) {
+        case "ADMINISTRADOR":
+            // Obtener las pertenencias asociadas al ID del administrador
+            List<Pertenencias> pertenenciasAdministrador = PertenenciasDAO.findByUserAndType(userId, rol);
+            // Mostrar las pertenencias en la tabla
+            populateTable(pertenenciasAdministrador);
+            break;
+        case "APRENDIZ":
+        case "INSTRUCTOR":
+        case "FUNCIONARIO":
+        case "EXTERNO":
+            // Obtener las pertenencias asociadas al ID del usuario
+            List<Pertenencias> pertenenciasUsuario = PertenenciasDAO.findByUserAndType(userId, rol);
+            // Mostrar las pertenencias en la tabla
+            populateTable(pertenenciasUsuario);
+            break;
+        default:
+            JOptionPane.showMessageDialog(null, "Rol no reconocido");
+            break;
     }
+}
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
 
     private void populateTable(List<Pertenencias> pertenencias) {
         model.setRowCount(0);
         for (Pertenencias pertenencia : pertenencias) {
-            model.addRow(new Object[]{
-                pertenencia.getPertenencia_id(),
-                pertenencia.getTipo(),
-                pertenencia.getDescripcion(),
-                pertenencia.getUserId()
-            });
+            // Obtener la lista de bitácoras asociadas a esta pertenencia
+            List<Bitacora> bitacoras = BitacoraDAO.findByPertenenciaId(pertenencia.getPertenencia_id());
+
+            // Iterar sobre las bitácoras para agregar sus datos a la tabla
+            for (Bitacora bitacora : bitacoras) {
+                model.addRow(new Object[]{
+                        pertenencia.getPertenencia_id(),
+                        pertenencia.getTipo(),
+                        pertenencia.getDescripcion(),
+                        pertenencia.getUserId(),
+                        bitacora.getBitacoraID(), // ID de la bitácora
+                        bitacora.getFechaIngreso(), // Fecha de ingreso
+                        bitacora.getHoraEntrada(), // Hora de entrada
+                        bitacora.getHoraSalida(), // Hora de salida
+                        bitacora.getTipo() // Tipo de la bitácora
+                });
+            }
         }
     }
 
     private void addPertenencia() {
-        String tipo = JOptionPane.showInputDialog("Tipo:");
-        String descripcion = JOptionPane.showInputDialog("Descripción:");
-        int userId = Integer.parseInt(JOptionPane.showInputDialog("ID de usuario:"));
+        RegistrarPertenencia per = new RegistrarPertenencia();
+        per.setLocationRelativeTo(null);
+        per.setVisible(true);
+        dispose();
+    }
 
-        UUID uuid = UUID.randomUUID();
-        String pertenenciaId = uuid.toString();
+    private void getoutPertenencia() {
+        RegistrarPertenencia per = new RegistrarPertenencia();
+        per.setLocationRelativeTo(null);
+        per.setVisible(true);
+        dispose();
+    }
 
-        Pertenencias pertenencia = new Pertenencias(pertenenciaId, tipo, descripcion, userId);
-        PertenenciasDAO.create(pertenencia);
-        loadPertenencias();
+    private void readdPertenencia() {
+        RegistrarPertenencia per = new RegistrarPertenencia();
+        per.setLocationRelativeTo(null);
+        per.setVisible(true);
+        dispose();
     }
 
     private void editPertenencia() {
@@ -150,7 +203,7 @@ public class TablaPertenencias extends JFrame {
                 dispose();
             }
             default ->
-                JOptionPane.showMessageDialog(null, "Rol no reconocido");
+                    JOptionPane.showMessageDialog(null, "Rol no reconocido");
         }
     }
 
@@ -160,13 +213,19 @@ public class TablaPertenencias extends JFrame {
         model.addColumn("Tipo");
         model.addColumn("Descripción");
         model.addColumn("ID de Usuario");
-        table.setModel(model);
-    }
 
-    private void loadPertenencias() {
-        model.setRowCount(0);
-        List<Pertenencias> pertenencias = PertenenciasDAO.findAll();
-        populateTable(pertenencias);
+        // Agregar las columnas de la Bitácora
+        model.addColumn("ID de Bitácora");
+        model.addColumn("Fecha");
+        model.addColumn("Hora de Entrada");
+        model.addColumn("Hora de Salida");
+        model.addColumn("Tipo");
+
+        table.setModel(model);
+        // Ocultar la columna de ID de Bitácora
+        table.getColumnModel().getColumn(4).setMinWidth(0);
+        table.getColumnModel().getColumn(4).setMaxWidth(0);
+        table.getColumnModel().getColumn(4).setWidth(0);
     }
 
     public static void main(String[] args) {
@@ -174,7 +233,7 @@ public class TablaPertenencias extends JFrame {
             TablaPertenencias pertenenciasPanel = new TablaPertenencias();
             pertenenciasPanel.setVisible(true);
         });
-        
+
     }
 
     public int getSelectedRow() {

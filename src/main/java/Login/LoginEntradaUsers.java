@@ -253,6 +253,8 @@ public class LoginEntradaUsers extends javax.swing.JFrame {
 
         // Utilizar la variable tipoDocumentoIngresado en el resto del código según sea necesario
         if (siEsValido(idText, password, selectedRole)) {
+        userId = Integer.parseInt(idText);
+        tipoUsuario = selectedRoleString;
             switch (selectedRole) {
                 case APRENDIZ -> {
                     tipoUsuario = "APRENDIZ";

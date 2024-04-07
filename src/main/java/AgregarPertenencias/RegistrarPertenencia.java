@@ -20,10 +20,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
-/**
- *
- * @author Administrador
- */
+
 public class RegistrarPertenencia extends javax.swing.JFrame {
 
     ControllerPertenencias control;

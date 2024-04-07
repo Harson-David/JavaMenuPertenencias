@@ -14,6 +14,12 @@ import java.awt.event.ActionListener;
 //import Controllers.ControllerProgramas;
 //import Controllers.ControllerUsers;
 import Login.AdminLogin;
+import Login.SelectRol;
+import RegistroTipoUsuario.AdminRegistro;
+import RegistroTipoUsuario.AprendizRegistro;
+import RegistroTipoUsuario.ExternoRegistro;
+import RegistroTipoUsuario.FuncionarioRegistro;
+import RegistroTipoUsuario.InstructorRegistro;
 
 public class MenuTest extends JFrame implements ActionListener {
 
@@ -76,9 +82,15 @@ public class MenuTest extends JFrame implements ActionListener {
     }
 
     private void showUsersPanel() {
-        UsersPanelTest usersPanel = new UsersPanelTest();
-        usersPanel.setVisible(true);
-        dispose();
+        try {
+            SelectRol rol = new SelectRol();
+            rol.setLocationRelativeTo(null);
+            rol.setVisible(true);
+            dispose();
+        } catch (Exception ex) {
+            System.err.println("Error al abrir la ventana EleccionRol: " + ex.getMessage());
+            ex.printStackTrace();
+        }
     }
 
     private void showProgramasPanel() {
@@ -98,7 +110,7 @@ public class MenuTest extends JFrame implements ActionListener {
         pertenenciasPanel.setVisible(true);
         dispose();
     }
-
+    
     public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {

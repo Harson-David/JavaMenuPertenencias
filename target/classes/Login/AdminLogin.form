@@ -131,9 +131,9 @@
                       <Component id="button10" min="-2" pref="82" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="button11" min="-2" pref="82" max="-2" attributes="0"/>
-                      <Component id="retirar" min="-2" pref="82" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="button11" pref="82" max="32767" attributes="0"/>
+                      <Component id="retirar" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace pref="122" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">

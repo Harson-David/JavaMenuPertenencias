@@ -72,7 +72,7 @@ public class SelectRol extends javax.swing.JFrame {
         jComboBox1.setBackground(new java.awt.Color(255, 255, 255));
         jComboBox1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jComboBox1.setForeground(new java.awt.Color(0, 0, 0));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "APRENDIZ", "INSTRUCTOR", "FUNCIONARIO", "EXTERNO", "ADMINISTRADOR" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "APRENDIZ", "INSTRUCTOR", "FUNCIONARIO", "EXTERNO" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);

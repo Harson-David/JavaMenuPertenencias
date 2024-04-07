@@ -205,6 +205,30 @@ private static final String INSERT_QUERY = "INSERT INTO bitacora (bitacora_fecha
         }
     }
 
+public static List<Bitacora> findByPertenenciaId(String pertenencia_id) {
+    List<Bitacora> bitacoras = new ArrayList<>();
+
+    String query = "SELECT b.* FROM bitacora b " +
+                   "JOIN pertenencias_bitacora pb ON b.bitacora_id = pb.bitacora_id " +
+                   "WHERE pb.pertenencia_id = ?";
+
+    try (Connection connection = DataBase.getConnection();
+         PreparedStatement statement = connection.prepareStatement(query)) {
+        statement.setString(1, pertenencia_id);
+        ResultSet resultSet = statement.executeQuery();
+        
+        while (resultSet.next()) {
+            Bitacora bitacora = mapResultSetToBitacora(resultSet);
+            bitacoras.add(bitacora);
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    
+    return bitacoras;
+}
+
+
     private int generateRandomId() {
         int min = 100000;
         int max = 999999;
