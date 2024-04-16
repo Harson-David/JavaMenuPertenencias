@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package Login;
 
 import AgregarPertenencias.RegistrarPertenencia;
@@ -35,10 +31,9 @@ public class AdminLogin extends javax.swing.JFrame {
         this.tipoDocumento = tipoDocumento;
     }
 
-    // Método para establecer el tipo de documento 
+   
     public void setTipoDocumento(String tipoDocumento) {
         this.tipoDocumento = tipoDocumento;
-        // Actualizar la etiqueta solo si la interfaz está visible por la terminal
         if (isVisible()) {
             TipoDocumento.setText("Tipo de documento: " + tipoDocumento);
         }
@@ -58,9 +53,7 @@ public class AdminLogin extends javax.swing.JFrame {
         button3 = new java.awt.Button();
         label1 = new java.awt.Label();
         button10 = new java.awt.Button();
-        reintroducir = new java.awt.Button();
         button8 = new java.awt.Button();
-        retirar = new java.awt.Button();
         button11 = new java.awt.Button();
         TipoDocumento = new java.awt.Label();
 
@@ -90,7 +83,7 @@ public class AdminLogin extends javax.swing.JFrame {
 
         button3.setBackground(new java.awt.Color(102, 255, 102));
         button3.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        button3.setLabel("Creacion de Registros");
+        button3.setLabel("REGISTROS");
         button3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button3ActionPerformed(evt);
@@ -100,43 +93,23 @@ public class AdminLogin extends javax.swing.JFrame {
         label1.setAlignment(java.awt.Label.CENTER);
         label1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         label1.setForeground(new java.awt.Color(255, 255, 255));
-        label1.setText("ADMINISTRADOR");
+        label1.setText("ADMINISTRADOR SENA");
 
         button10.setBackground(new java.awt.Color(51, 255, 204));
-        button10.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        button10.setLabel("Editar Informacion");
+        button10.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
+        button10.setLabel("ACTUALIZAR INFORMACION");
         button10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button10ActionPerformed(evt);
             }
         });
 
-        reintroducir.setBackground(new java.awt.Color(0, 255, 204));
-        reintroducir.setFont(new java.awt.Font("Dialog", 1, 22)); // NOI18N
-        reintroducir.setLabel("Reintrodocir Pertenencia");
-        reintroducir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                reintroducirActionPerformed(evt);
-            }
-        });
-
         button8.setBackground(new java.awt.Color(0, 153, 153));
-        button8.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        button8.setLabel("Guardar Pertenencia");
+        button8.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
+        button8.setLabel("GUARDAR PERTENENCIA");
         button8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button8ActionPerformed(evt);
-            }
-        });
-
-        retirar.setBackground(new java.awt.Color(0, 51, 51));
-        retirar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        retirar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        retirar.setForeground(new java.awt.Color(255, 255, 255));
-        retirar.setLabel("RETIRAR PERTENENCIA");
-        retirar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                retirarActionPerformed(evt);
             }
         });
 
@@ -144,7 +117,7 @@ public class AdminLogin extends javax.swing.JFrame {
         button11.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         button11.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         button11.setForeground(new java.awt.Color(255, 255, 255));
-        button11.setLabel("EDITAR PERTENENCIA");
+        button11.setLabel("MIS PERTENENCIAS");
         button11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button11ActionPerformed(evt);
@@ -156,35 +129,27 @@ public class AdminLogin extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(button8, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(retirar, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(reintroducir, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(button11, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(button10, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(25, 25, 25))))
+                .addGap(41, 41, 41)
+                .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                .addComponent(button10, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(85, 85, 85))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(207, 207, 207)
-                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(TipoDocumento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(207, 207, 207)
+                        .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(TipoDocumento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(219, 219, 219)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(button11, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(button8, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(193, 193, 193)
+                        .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(190, 190, 190))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -197,29 +162,23 @@ public class AdminLogin extends javax.swing.JFrame {
                         .addGap(31, 31, 31)
                         .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(70, 70, 70)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(button10, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(79, 79, 79)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(button11, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
-                    .addComponent(retirar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(button8, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(reintroducir, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(63, 63, 63)
-                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(78, 78, 78))
+                    .addComponent(button10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(button3, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE))
+                .addGap(78, 78, 78)
+                .addComponent(button8, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52)
+                .addComponent(button11, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(70, 70, 70)
+                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(76, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -231,23 +190,12 @@ public class AdminLogin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void reintroducirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reintroducirActionPerformed
-        DevolverPertenencia dev = new DevolverPertenencia();
-        dev.setLocationRelativeTo(null);
-        dev.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_reintroducirActionPerformed
-
     private void button8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button8ActionPerformed
         RegistrarPertenencia per = new RegistrarPertenencia();
         per.setLocationRelativeTo(null);
         per.setVisible(true);
         dispose();
     }//GEN-LAST:event_button8ActionPerformed
-
-    private void retirarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retirarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_retirarActionPerformed
 
     private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
         SwingUtilities.invokeLater(() -> {
@@ -259,29 +207,23 @@ public class AdminLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_button3ActionPerformed
 
     private void button10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button10ActionPerformed
-        //String tipoDocumento = getTipoDocumento();
-        UserAdminEdit edit = new UserAdminEdit();
+        int userId = LoginEntradaUsers.userId;
+
+        UserAdminEdit edit = new UserAdminEdit(userId);
         edit.setLocationRelativeTo(null);
+        edit.setUserId(userId);
         edit.setVisible(true);
         dispose();
     }//GEN-LAST:event_button10ActionPerformed
 
     private void button11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button11ActionPerformed
-    // Crear una instancia de TablaPertenencias
-    TablaPertenencias tabla = new TablaPertenencias();
-
-    // Obtener el userId de LoginEntradaUsers
-    int userId = LoginEntradaUsers.userId;
-
-    // Puedes hacer lo que necesites con userId, por ejemplo, pasarlo a TablaPertenencias
-    tabla.setUserId(userId);
-
-    // Mostrar la ventana de TablaPertenencias
-    tabla.setLocationRelativeTo(null);
-    tabla.setVisible(true);
-
-    // Cerrar la ventana actual
-    dispose();
+    
+        TablaPertenencias tabla = new TablaPertenencias();
+        int userId = LoginEntradaUsers.userId;
+        tabla.setUserId(userId);
+        tabla.setLocationRelativeTo(null);
+        tabla.setVisible(true);
+        dispose();
     }//GEN-LAST:event_button11ActionPerformed
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
@@ -293,7 +235,7 @@ public class AdminLogin extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_button1ActionPerformed
-    // Declarar una variable para almacenar el tipo de documento
+
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -323,14 +265,11 @@ public class AdminLogin extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AdminLogin().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new AdminLogin().setVisible(true);
         });
     }
-    
-    
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Label TipoDocumento;
@@ -342,7 +281,5 @@ public class AdminLogin extends javax.swing.JFrame {
     private javax.swing.JFrame jFrame1;
     private javax.swing.JPanel jPanel1;
     private java.awt.Label label1;
-    private java.awt.Button reintroducir;
-    private java.awt.Button retirar;
     // End of variables declaration//GEN-END:variables
 }

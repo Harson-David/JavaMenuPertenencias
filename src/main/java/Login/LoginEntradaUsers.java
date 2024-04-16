@@ -21,6 +21,8 @@ public class LoginEntradaUsers extends javax.swing.JFrame {
 
     public static String tipoDOCUMENTO;
 
+    private int intentosFallidos = 0;
+
     public LoginEntradaUsers() {
         initComponents();
     }
@@ -231,7 +233,7 @@ public class LoginEntradaUsers extends javax.swing.JFrame {
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
         String selectedDocument = (String) jComboBox2.getSelectedItem();
 
-        // Guardado en variable global
+        // ES guardado en variable global
         tipoDocumentoIngresado = selectedDocument;
         TipoDocumento selectedDocumentType = TipoDocumento.valueOf(selectedDocument);
         List<TipoDocumento> validDocumentTypes = Arrays.asList(TipoDocumento.CC, TipoDocumento.TI, TipoDocumento.CE, TipoDocumento.PASAPORTE);
@@ -248,18 +250,18 @@ public class LoginEntradaUsers extends javax.swing.JFrame {
         String password = new String(jPasswordField1.getPassword());
         String selectedRoleString = (String) jComboBox1.getSelectedItem();
 
-        // Obten tipo usuaurio
+        // obtener tipo de usuario
         Users.UserRole selectedRole = convertirStringARole(selectedRoleString);
 
-        // Utilizar la variable tipoDocumentoIngresado en el resto del código según sea necesario
+        // Validación de que si es un usuario válido según su rol.
         if (siEsValido(idText, password, selectedRole)) {
-        userId = Integer.parseInt(idText);
-        tipoUsuario = selectedRoleString;
+            userId = Integer.parseInt(idText);
+            tipoUsuario = selectedRoleString;
             switch (selectedRole) {
                 case APRENDIZ -> {
                     tipoUsuario = "APRENDIZ";
                     AprendizLogin aprendizLogin = new AprendizLogin();
-                    aprendizLogin.setTipoDocumento(tipoDocumentoIngresado); 
+                    aprendizLogin.setTipoDocumento(tipoDocumentoIngresado);
                     aprendizLogin.setLocationRelativeTo(null);
                     aprendizLogin.setVisible(true);
                     dispose();
@@ -267,7 +269,7 @@ public class LoginEntradaUsers extends javax.swing.JFrame {
                 case INSTRUCTOR -> {
                     tipoUsuario = "INSTRUCTOR";
                     InstructorLogin log = new InstructorLogin();
-                    log.setTipoDocumento(tipoDocumentoIngresado); 
+                    log.setTipoDocumento(tipoDocumentoIngresado);
                     log.setLocationRelativeTo(null);
                     log.setVisible(true);
                     dispose();
@@ -275,7 +277,7 @@ public class LoginEntradaUsers extends javax.swing.JFrame {
                 case FUNCIONARIO -> {
                     tipoUsuario = "FUNCIONARIO";
                     FuncionarioLogin fun = new FuncionarioLogin();
-                    fun.setTipoDocumento(tipoDocumentoIngresado); 
+                    fun.setTipoDocumento(tipoDocumentoIngresado);
                     fun.setLocationRelativeTo(null);
                     fun.setVisible(true);
                     dispose();
@@ -291,7 +293,7 @@ public class LoginEntradaUsers extends javax.swing.JFrame {
                 case ADMINISTRADOR -> {
                     tipoUsuario = "ADMINISTRADOR";
                     AdminLogin adm = new AdminLogin();
-                    adm.setTipoDocumento(tipoDocumentoIngresado); 
+                    adm.setTipoDocumento(tipoDocumentoIngresado);
                     adm.setLocationRelativeTo(null);
                     adm.setVisible(true);
                     dispose();
@@ -300,7 +302,16 @@ public class LoginEntradaUsers extends javax.swing.JFrame {
                     System.out.println("No hay una vista específica para este rol.");
             }
         } else {
-            JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos", "Error de inicio de sesión", JOptionPane.ERROR_MESSAGE);
+            intentosFallidos++;
+            if (intentosFallidos >= 5) {
+                JOptionPane.showMessageDialog(null, "Ha superado el límite de intentos fallidos de inicio de sesión.\nPor favor, haga una solicitud de recuperación de contraseña de usuario.", "Error de inicio de sesión", JOptionPane.ERROR_MESSAGE);
+                LoginInicio mainMenu = new LoginInicio();
+                mainMenu.setLocationRelativeTo(null);
+                mainMenu.setVisible(true);
+                dispose();
+            } else {
+                JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos", "Error de inicio de sesión", JOptionPane.ERROR_MESSAGE);
+            }
         }
     }//GEN-LAST:event_button1ActionPerformed
 

@@ -16,7 +16,6 @@ public class ControllerUsers {
         usersDAO.create(user);
     }
 
-
     public List<Users> findAll() {
         return usersDAO.findAll();
     }
@@ -24,8 +23,8 @@ public class ControllerUsers {
     public Users findOne(int userId) {
         return usersDAO.findOne(userId);
     }
-    
-        public void update(Users user) {
+
+    public void update(Users user) {
         usersDAO.update(user);
     }
 

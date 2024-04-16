@@ -6,18 +6,6 @@ public class Users {
 
     private int user_id;
 
-    public Users(int nd, UserRole userRole, UserTypeDocument UserTypeDocument, String c, String n, String a, int nc, String d, String em, String cr, String cg, String cr0, String cr1, int nc0, String cf, String cr2, String cg0) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public Users(UserTypeDocument userTypeDocument, String contrasena, String nombres, String apellidos, int numContacto, String direccion, String email, String centroFormacion, String coordi) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public Users(int numeroDocumento, String tipoDocumento, String contrasena, String nombres, String apellidos, String coordi, String centroFormacion, int numContacto, String direccion, String email, String cargo) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
 // Enumeración para los roles de usuario
     public enum UserRole {
         APRENDIZ,
@@ -73,8 +61,6 @@ public class Users {
         this.cargoActual = cargoActual;
         this.lugarProcedencia = lugarProcedencia;
     }
-
-
 
     public int getUser_id() {
         return user_id;
@@ -211,15 +197,14 @@ public class Users {
     public void setLugarProcedencia(String lugarProcedencia) {
         this.lugarProcedencia = lugarProcedencia;
     }
-    
-    
 
     @Override
     public String toString() {
         return "Users{" + "user_id=" + user_id + ", userRol=" + userRol + ", typeDocument=" + typeDocument + ", password=" + password + ", name=" + name + ", lastName=" + lastName + ", numContact=" + numContact + ", address=" + address + ", email=" + email + ", jornada=" + jornada + ", tipoFormacion=" + tipoFormacion + ", centroFormacion=" + centroFormacion + ", coordinacion=" + coordinacion + ", numFicha=" + numFicha + ", formacion=" + formacion + ", cargoActual=" + cargoActual + ", lugarProcedencia=" + lugarProcedencia + '}';
     }
 
-    public Users(int user_id, UserRole userRol, UserTypeDocument typeDocument, String password, String name, String lastName, int numContact, String address, String email,String jornada ,String centroFormacion, String coordinacion, String cargoActual) {
+    //PARA FUNCIONARIO Y ADMINISTRADOR
+    public Users(int user_id, UserRole userRol, UserTypeDocument typeDocument, String password, String name, String lastName, int numContact, String address, String email, String jornada, String centroFormacion, String coordinacion, String cargoActual) {
         this.user_id = user_id;
         this.userRol = userRol;
         this.typeDocument = typeDocument;
@@ -235,6 +220,7 @@ public class Users {
         this.cargoActual = cargoActual;
     }
 
+    // PARA APRENDIZ
     public Users(int user_id, UserRole userRol, UserTypeDocument typeDocument, String password, String name, String lastName, int numContact, String address, String email, String jornada, String tipoFormacion, String centroFormacion, String coordinacion, int numFicha) {
         this.user_id = user_id;
         this.userRol = userRol;
@@ -252,6 +238,7 @@ public class Users {
         this.numFicha = numFicha;
     }
 
+    // PARA EXTERNO
     public Users(int user_id, UserRole userRol, UserTypeDocument typeDocument, String password, String name, String lastName, int numContact, String address, String email, String lugarProcedencia) {
         this.user_id = user_id;
         this.userRol = userRol;
@@ -265,6 +252,7 @@ public class Users {
         this.lugarProcedencia = lugarProcedencia;
     }
 
+    // PARA INSTRUCTOR
     public Users(int user_id, UserRole userRol, UserTypeDocument typeDocument, String password, String name, String lastName, int numContact, String address, String email, String jornada, String tipoFormacion, String centroFormacion, String coordinacion, int numFicha, int formacion) {
         this.user_id = user_id;
         this.userRol = userRol;
@@ -282,9 +270,72 @@ public class Users {
         this.numFicha = numFicha;
         this.formacion = formacion;
     }
-    
-    
-    
-    
+
+    // PARA ACTUALIZAR INFORMACION DE USUARIOS
+    public Users(int user_id, UserTypeDocument typeDocument, UserRole userRol, String password, String name, String lastName, int numContact, String address, String email, String jornada, String centroFormacion, String coordinacion) {
+        this.user_id = user_id;
+        this.typeDocument = typeDocument;
+        this.userRol = userRol;
+        this.password = password;
+        this.name = name;
+        this.lastName = lastName;
+        this.numContact = numContact;
+        this.address = address;
+        this.email = email;
+        this.jornada = jornada;
+        this.centroFormacion = centroFormacion;
+        this.coordinacion = coordinacion;
+    }
+
+    public Users(int user_id, UserTypeDocument typeDocument, UserRole userRol, String password, String name, String lastName, int numContact, String address, String email, String lugarProcedencia) {
+        this.user_id = user_id;
+        this.typeDocument = typeDocument;
+        this.userRol = userRol;
+        this.password = password;
+        this.name = name;
+        this.lastName = lastName;
+        this.numContact = numContact;
+        this.address = address;
+        this.email = email;
+        this.lugarProcedencia = lugarProcedencia;
+    }
+
+    public Users(int user_id, UserTypeDocument typeDocument, UserRole userRol, String password, String name, String lastName, int numContact, String address, String email, String jornada, String centroFormacion, String coordinacion, String cargoActual) {
+        this.user_id = user_id;
+        this.typeDocument = typeDocument;
+        this.userRol = userRol;
+        this.password = password;
+        this.name = name;
+        this.lastName = lastName;
+        this.numContact = numContact;
+        this.address = address;
+        this.email = email;
+        this.jornada = jornada;
+        this.centroFormacion = centroFormacion;
+        this.coordinacion = coordinacion;
+        this.cargoActual = cargoActual;
+    }
+
+    public Users(int user_id, UserRole userRol, UserTypeDocument typeDocument, String password, String name, String lastName, int numContact, String address, String email, String jornada, String tipoFormacion, String centroFormacion, String coordinacion, int numFicha, int formacion, boolean isUpdatingInstructor) {
+    this.user_id = user_id;
+    this.userRol = userRol;
+    this.typeDocument = typeDocument;
+    this.password = password;
+    this.name = name;
+    this.lastName = lastName;
+    this.numContact = numContact;
+    this.address = address;
+    this.email = email;
+    this.jornada = jornada;
+    this.tipoFormacion = tipoFormacion;
+    this.centroFormacion = centroFormacion;
+    this.coordinacion = coordinacion;
+    if (isUpdatingInstructor) {
+        this.formacion = formacion;
+    } else {
+        this.numFicha = numFicha;
+    }
+}
+
 
 }

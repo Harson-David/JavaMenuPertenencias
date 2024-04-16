@@ -20,6 +20,7 @@ import RegistroTipoUsuario.AprendizRegistro;
 import RegistroTipoUsuario.ExternoRegistro;
 import RegistroTipoUsuario.FuncionarioRegistro;
 import RegistroTipoUsuario.InstructorRegistro;
+import editPertenenciaUsers.TabladePertenenciasAdmin;
 
 public class MenuTest extends JFrame implements ActionListener {
 
@@ -81,16 +82,13 @@ public class MenuTest extends JFrame implements ActionListener {
         }
     }
 
-    private void showUsersPanel() {
-        try {
-            SelectRol rol = new SelectRol();
-            rol.setLocationRelativeTo(null);
-            rol.setVisible(true);
-            dispose();
-        } catch (Exception ex) {
-            System.err.println("Error al abrir la ventana EleccionRol: " + ex.getMessage());
-            ex.printStackTrace();
-        }
+    
+    
+        private void showUsersPanel() {
+        UsersPanelTest usersPanel = new UsersPanelTest();
+        usersPanel.setLocationRelativeTo(null);
+        usersPanel.setVisible(true);
+        dispose();
     }
 
     private void showProgramasPanel() {
@@ -106,7 +104,7 @@ public class MenuTest extends JFrame implements ActionListener {
     }
 
     private void showPertenenciasPanel() {
-        PertenenciasPanelTest pertenenciasPanel = new PertenenciasPanelTest();
+        TabladePertenenciasAdmin pertenenciasPanel = new TabladePertenenciasAdmin();
         pertenenciasPanel.setVisible(true);
         dispose();
     }

@@ -32,4 +32,8 @@ public class ControllerPertenencias {
     public void delete(String pertenenciaId) {
         pertenenciasDAO.delete(pertenenciaId);
     }
+
+    public void relacionPerBit(String pertenenciaId, int BitacoraId) {
+        pertenenciasDAO.crearRelacionPertenenciaBitacora(pertenenciaId, BitacoraId);
+    }
 }

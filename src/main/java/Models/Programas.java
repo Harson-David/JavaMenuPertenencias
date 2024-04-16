@@ -3,24 +3,24 @@ package Models;
 
 public class Programas {
     
-    private int id_user;
+    private int id_Programa;
     private String nomPrograma;
     private String centroFormacion;
     private String coordinacion;
 
-    public Programas(int id_user, String nomPrograma, String centroFormacion, String coordinacion) {
-        this.id_user = id_user;
+    public Programas(int id_Programa, String nomPrograma, String centroFormacion, String coordinacion) {
+        this.id_Programa = id_Programa;
         this.nomPrograma = nomPrograma;
         this.centroFormacion = centroFormacion;
         this.coordinacion = coordinacion;
     }
 
-    public int getId_user() {
-        return id_user;
+    public int getid_Programa() {
+        return id_Programa;
     }
 
-    public void setId_user(int id_user) {
-        this.id_user = id_user;
+    public void setid_Programa(int id_Programa) {
+        this.id_Programa = id_Programa;
     }
 
     public String getNomPrograma() {
@@ -49,10 +49,8 @@ public class Programas {
 
     @Override
     public String toString() {
-        return "Programas{ " + "id_user=" + id_user + " , nomPrograma=" + nomPrograma + " , centroFormacion=" + centroFormacion + " , coordinacion=" + coordinacion + '}';
+        return "Programas{ " + "id_Programa=" + id_Programa + " , nomPrograma=" + nomPrograma + " , centroFormacion=" + centroFormacion + " , coordinacion=" + coordinacion + '}';
     }
     
-    
-   
     
 }

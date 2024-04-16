@@ -23,6 +23,8 @@ public class InstructorRegistro extends javax.swing.JFrame {
     public InstructorRegistro() {
         initComponents();
         user = new ControllerUsers();
+        label15.setVisible(false);
+        fichaEncargada.setVisible(false);
     }
 
     public enum TipoDocumento {
@@ -145,6 +147,11 @@ public class InstructorRegistro extends javax.swing.JFrame {
 
         fichaEncargada.setBackground(new java.awt.Color(204, 204, 204));
         fichaEncargada.setForeground(new java.awt.Color(0, 0, 0));
+        fichaEncargada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fichaEncargadaActionPerformed(evt);
+            }
+        });
 
         dir.setBackground(new java.awt.Color(204, 204, 204));
         dir.setForeground(new java.awt.Color(0, 0, 0));
@@ -405,7 +412,7 @@ public class InstructorRegistro extends javax.swing.JFrame {
         String tipForma = tipoForm.getText();
         String coordi = coordinacion.getText();
         String centroForm = cenFormacion.getText();
-        int ficha = Integer.parseInt(fichaEncargada.getText());
+        //int ficha = Integer.parseInt(fichaEncargada.getText());
         int forma = Integer.parseInt(formacion.getText());
         int numContacto = Integer.parseInt(this.numCont.getText());
         String direccion = dir.getText();
@@ -416,7 +423,7 @@ public class InstructorRegistro extends javax.swing.JFrame {
         Users.UserTypeDocument userTypeDocument = Users.UserTypeDocument.valueOf(tipodoc);
         Users newUser = new Users(numeroDocumento, userRole, userTypeDocument, contrasena,
                 nombres, apellidos, numContacto, direccion, email, jor, tipForma, centroForm,
-                coordi, ficha,forma);
+                coordi, forma);
         
         user.create(newUser);
         LoginEntradaUsers user = new LoginEntradaUsers();
@@ -425,6 +432,10 @@ public class InstructorRegistro extends javax.swing.JFrame {
         dispose();
         JOptionPane.showMessageDialog(null, "Usuario Creado con exito.");
     }//GEN-LAST:event_registrarActionPerformed
+
+    private void fichaEncargadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fichaEncargadaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fichaEncargadaActionPerformed
 
     /**
      * @param args the command line arguments

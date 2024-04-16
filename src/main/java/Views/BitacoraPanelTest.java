@@ -8,6 +8,7 @@ import Login.InstructorLogin;
 import Login.LoginEntradaUsers;
 import Models.Bitacora;
 import Models.BitacoraDAO;
+import Models.MenuTest;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -27,7 +28,7 @@ public class BitacoraPanelTest extends JFrame {
         initComponents();
         createTable();
         loadBitacora();
-        
+
     }
 
     private void initComponents() {
@@ -58,7 +59,7 @@ public class BitacoraPanelTest extends JFrame {
         addButton.addActionListener(e -> addBitacora());
         editButton.addActionListener(e -> editBitacora());
         deleteButton.addActionListener(e -> deleteBitacora());
-        backButton.addActionListener(e -> returnToLogin());
+        backButton.addActionListener(e -> goBackToMainMenu());
     }
 
     public void populateTable(List<Bitacora> bitacoras) {
@@ -100,7 +101,6 @@ public class BitacoraPanelTest extends JFrame {
         }
     }
 
-
     private int generateRandomId() {
         int min = 100000;
         int max = 999999;
@@ -123,41 +123,10 @@ public class BitacoraPanelTest extends JFrame {
         }
     }
 
-    private void returnToLogin() {
-        switch (rol) {
-            case "APRENDIZ" -> {
-                AprendizLogin aprendizLogin = new AprendizLogin();
-                aprendizLogin.setLocationRelativeTo(null);
-                aprendizLogin.setVisible(true);
-                dispose();
-            }
-            case "INSTRUCTOR" -> {
-                InstructorLogin log = new InstructorLogin();
-                log.setLocationRelativeTo(null);
-                log.setVisible(true);
-                dispose();
-            }
-            case "FUNCIONARIO" -> {
-                FuncionarioLogin fun = new FuncionarioLogin();
-                fun.setLocationRelativeTo(null);
-                fun.setVisible(true);
-                dispose();
-            }
-            case "EXTERNO" -> {
-                ExternoLogin ext = new ExternoLogin();
-                ext.setLocationRelativeTo(null);
-                ext.setVisible(true);
-                dispose();
-            }
-            case "ADMINISTRADOR" -> {
-                AdminLogin adm = new AdminLogin();
-                adm.setLocationRelativeTo(null);
-                adm.setVisible(true);
-                dispose();
-            }
-            default ->
-                JOptionPane.showMessageDialog(null, "Rol no reconocido");
-        }
+    private void goBackToMainMenu() {
+        MenuTest mainMenu = new MenuTest();
+        mainMenu.setVisible(true);
+        dispose();
     }
 
     private void createTable() {
@@ -179,7 +148,7 @@ public class BitacoraPanelTest extends JFrame {
         model.setRowCount(0);
         List<Bitacora> bitacoras = BitacoraDAO.findAll();
         populateTable(bitacoras);
-        
+
     }
 
     public static void main(String[] args) {

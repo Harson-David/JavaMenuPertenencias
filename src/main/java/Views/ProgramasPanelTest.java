@@ -55,7 +55,7 @@ public class ProgramasPanelTest extends JFrame {
         model.setRowCount(0);
         for (Programas programa : programas) {
             model.addRow(new Object[]{
-                programa.getId_user(),
+                programa.getid_Programa(),
                 programa.getNomPrograma(),
                 programa.getCentroFormacion(),
                 programa.getCoordinacion()
@@ -156,6 +156,5 @@ public class ProgramasPanelTest extends JFrame {
         deleteButton.addActionListener(e -> deletePrograma());
         return deleteButton;
     }
-
-
+    
 }

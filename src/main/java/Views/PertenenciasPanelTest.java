@@ -1,5 +1,6 @@
 package Views;
 
+import AgregarPertenencias.RegistrarPertenencia;
 import Models.MenuTest;
 import Models.Pertenencias;
 import Models.PertenenciasDAO;
@@ -64,14 +65,10 @@ public class PertenenciasPanelTest extends JFrame {
     }
 
     private void addPertenencia() {
-        String pertenenciaId = JOptionPane.showInputDialog("ID de la pertenencia:");
-        String tipo = JOptionPane.showInputDialog("Tipo:");
-        String descripcion = JOptionPane.showInputDialog("Descripción:");
-        int userId = Integer.parseInt(JOptionPane.showInputDialog("ID de usuario:"));
-
-        Pertenencias pertenencia = new Pertenencias(pertenenciaId, tipo, descripcion, userId);
-        PertenenciasDAO.create(pertenencia);
-        loadPertenencias();
+        RegistrarPertenencia per = new RegistrarPertenencia();
+        per.setLocationRelativeTo(null);
+        per.setVisible(true);
+        dispose();
     }
 
     private void editPertenencia() {

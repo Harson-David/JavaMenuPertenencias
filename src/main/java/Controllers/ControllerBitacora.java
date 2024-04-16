@@ -3,7 +3,6 @@ package Controllers;
 import Models.Bitacora;
 import Models.BitacoraDAO;
 
-
 import java.util.List;
 
 public class ControllerBitacora {
@@ -30,8 +29,12 @@ public class ControllerBitacora {
         return bitacoraDAO.findOne(bitacoraId);
     }
 
-    public void update(Bitacora bitacora) {
-        bitacoraDAO.update(bitacora);
+    public void sacar(Bitacora bitacora) {
+        bitacoraDAO.updateBit(bitacora);
+    }
+
+    public void volverAguardar(Bitacora bitacora) {
+        bitacoraDAO.reUpdateBit(bitacora);
     }
 
     public void delete(int bitacoraId) {

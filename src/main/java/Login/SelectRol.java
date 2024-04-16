@@ -148,44 +148,45 @@ public class SelectRol extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
-    String selectedRoleString = (String) jComboBox1.getSelectedItem();
-    Users.UserRole selectedRole = convertirStringARole(selectedRoleString);
-    
-            switch (selectedRole) {
-                case APRENDIZ -> {
-                    AprendizRegistro aprendizLogin = new AprendizRegistro();
-                    aprendizLogin.setLocationRelativeTo(null);
-                    aprendizLogin.setVisible(true);
-                    dispose();
+        String selectedRoleString = (String) jComboBox1.getSelectedItem();
+        Users.UserRole selectedRole = convertirStringARole(selectedRoleString);
+
+        switch (selectedRole) {
+            case APRENDIZ -> {
+                AprendizRegistro aprendizLogin = new AprendizRegistro();
+                aprendizLogin.setLocationRelativeTo(null);
+                aprendizLogin.setVisible(true);
+                dispose();
             }
-                case INSTRUCTOR -> {
-                    InstructorRegistro instructor = new InstructorRegistro();
-                    instructor.setLocationRelativeTo(null);
-                    instructor.setVisible(true);
-                    dispose();
+            case INSTRUCTOR -> {
+                InstructorRegistro instructor = new InstructorRegistro();
+                instructor.setLocationRelativeTo(null);
+                instructor.setVisible(true);
+                dispose();
             }
-                case FUNCIONARIO -> {
-                    FuncionarioRegistro fun = new FuncionarioRegistro();
-                    fun.setLocationRelativeTo(null);
-                    fun.setVisible(true);
-                    dispose();
+            case FUNCIONARIO -> {
+                FuncionarioRegistro fun = new FuncionarioRegistro();
+                fun.setLocationRelativeTo(null);
+                fun.setVisible(true);
+                dispose();
             }
-                case EXTERNO -> {
-                    ExternoRegistro externo = new ExternoRegistro();
-                    externo.setLocationRelativeTo(null);
-                    externo.setVisible(true);
-                    dispose();
+            case EXTERNO -> {
+                ExternoRegistro externo = new ExternoRegistro();
+                externo.setLocationRelativeTo(null);
+                externo.setVisible(true);
+                dispose();
             }
-                case ADMINISTRADOR -> {
-                    AdminRegistro admin = new AdminRegistro();
-                    admin.setLocationRelativeTo(null);
-                    admin.setVisible(true);
-                    dispose();
+            case ADMINISTRADOR -> {
+                AdminRegistro admin = new AdminRegistro();
+                admin.setLocationRelativeTo(null);
+                admin.setVisible(true);
+                dispose();
             }
-                default -> System.out.println("No hay una vista específica para este rol.");
-            }
-       
-    
+            default ->
+                System.out.println("No hay una vista específica para este rol.");
+        }
+
+
     }//GEN-LAST:event_button1ActionPerformed
 
     private Users.UserRole convertirStringARole(String selectedRoleString) {
@@ -209,10 +210,7 @@ public class SelectRol extends javax.swing.JFrame {
                 throw new IllegalArgumentException("Rol no válido: " + selectedRoleString);
         }
     }
-    
-    
-    
-    
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

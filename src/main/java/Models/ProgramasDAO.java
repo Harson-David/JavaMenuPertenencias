@@ -33,7 +33,7 @@ public class ProgramasDAO {
         try {
             Connection connection = DataBase.getConnection();
             PreparedStatement statement = connection.prepareStatement(INSERT_QUERY);
-            statement.setInt(1, programa.getId_user());
+            statement.setInt(1, programa.getid_Programa());
             statement.setString(2, programa.getNomPrograma());
             statement.setString(3, programa.getCentroFormacion());
             statement.setString(4, programa.getCoordinacion());
@@ -92,7 +92,7 @@ public class ProgramasDAO {
             statement.setString(1, programa.getNomPrograma());
             statement.setString(2, programa.getCentroFormacion());
             statement.setString(3, programa.getCoordinacion());
-            statement.setInt(4, programa.getId_user());
+            statement.setInt(4, programa.getid_Programa());
             statement.executeUpdate();
             System.out.println("Programa actualizado: " + programa.toString());
             statement.close();
@@ -133,5 +133,12 @@ public class ProgramasDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    private int generateRandomId() {
+        int min = 100000;
+        int max = 999999;
+        int randomNum = min + (int) (Math.random() * ((max - min) + 1));
+        return randomNum;
     }
 }
