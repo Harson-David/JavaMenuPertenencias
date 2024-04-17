@@ -1,18 +1,39 @@
 Login\InstructorLogin$3.class
+<<<<<<< HEAD
 Login\LoginInicio$3.class
 usersEdit_Informacion\UserAprendizEdit.class
 usersEdit_Informacion\UserAdminEdit$2.class
 Login\FuncionarioLogin$1.class
+=======
+usersEdit_Informacion\AprendizEdit$4.class
+Login\LoginInicio$3.class
+usersEdit_Informacion\UserAprendizEdit.class
+usersEdit_Informacion\InstructorEdit$4.class
+usersEdit_Informacion\UserAdminEdit$2.class
+usersEdit_Informacion\ExternoEdit$6.class
+Login\FuncionarioLogin$1.class
+usersEdit_Informacion\FuncionarioEdit$2.class
+>>>>>>> b36e289 (Problemas arreglados)
 Login\LoginEntradaUsers$1.class
 RegistroTipoUsuario\AprendizRegistro$5.class
 RegistroTipoUsuario\ExternoRegistro$3.class
 Models\Users$UserRole.class
 usersEdit_Informacion\UserFuncionarioEdit$5.class
 Controllers\ControllerPertenencias.class
+<<<<<<< HEAD
 AgregarPertenencias\RegistrarPertenencia$2.class
 RegistroTipoUsuario\InstructorRegistro$5.class
 RegistroTipoUsuario\FuncionarioRegistro$3.class
 editPertenenciaUsers\EditarPertenencia$1.class
+=======
+usersEdit_Informacion\AdminEdit$6.class
+AgregarPertenencias\RegistrarPertenencia$2.class
+RegistroTipoUsuario\InstructorRegistro$5.class
+usersEdit_Informacion\ExternoEdit$TipoDocumento.class
+RegistroTipoUsuario\FuncionarioRegistro$3.class
+editPertenenciaUsers\EditarPertenencia$1.class
+usersEdit_Informacion\AdminEdit.class
+>>>>>>> b36e289 (Problemas arreglados)
 usersEdit_Informacion\UserInstructorEdit$7.class
 Login\AprendizLogin$2.class
 usersEdit_Informacion\UserExternoEdit$4.class
@@ -26,13 +47,26 @@ RegistroTipoUsuario\AprendizRegistro.class
 AgregarPertenencias\RegistrarPertenencia$1.class
 Login\LoginEntradaUsers$7.class
 RegistroTipoUsuario\FuncionarioRegistro$4.class
+<<<<<<< HEAD
+=======
+usersEdit_Informacion\FuncionarioEdit$1.class
+>>>>>>> b36e289 (Problemas arreglados)
 RegistroTipoUsuario\AprendizRegistro$6.class
 usersEdit_Informacion\UserInstructorEdit$1.class
 Views\PertenenciasPanelTest.class
 Login\AdminLogin$2.class
+<<<<<<< HEAD
 Login\ExternoLogin$5.class
 usersEdit_Informacion\UserExternoEdit$3.class
 Login\AprendizLogin$3.class
+=======
+usersEdit_Informacion\ExternoEdit$5.class
+usersEdit_Informacion\FuncionarioEdit$7.class
+Login\ExternoLogin$5.class
+usersEdit_Informacion\UserExternoEdit$3.class
+Login\AprendizLogin$3.class
+Login\SelectUser$2.class
+>>>>>>> b36e289 (Problemas arreglados)
 Views\BitacoraPanelTest.class
 Models\Programas.class
 usersEdit_Informacion\UserAdminEdit$3.class
@@ -42,6 +76,7 @@ usersEdit_Informacion\UserFuncionarioEdit$4.class
 AgregarPertenencias\RegistrarPertenencia$7.class
 Login\LoginEntradaUsers$6.class
 RegistroTipoUsuario\FuncionarioRegistro$TipoDocumento.class
+<<<<<<< HEAD
 Models\ProgramasDAO.class
 usersEdit_Informacion\UserExternoEdit.class
 usersEdit_Informacion\UserInstructorEdit.class
@@ -51,26 +86,62 @@ usersEdit_Informacion\UserInstructorEdit$2.class
 RegistroTipoUsuario\InstructorRegistro$4.class
 Login\AdminLogin$3.class
 usersEdit_Informacion\UserInstructorEdit$3.class
+=======
+usersEdit_Informacion\FuncionarioEdit$8.class
+Models\ProgramasDAO.class
+usersEdit_Informacion\UserExternoEdit.class
+usersEdit_Informacion\UserInstructorEdit.class
+usersEdit_Informacion\AdminEdit$5.class
+Login\LoginEntradaUsers.class
+Login\LoginInicio$2.class
+usersEdit_Informacion\UserInstructorEdit$2.class
+Login\SelectUser$3.class
+RegistroTipoUsuario\InstructorRegistro$4.class
+Login\AdminLogin$3.class
+usersEdit_Informacion\InstructorEdit$5.class
+usersEdit_Informacion\UserInstructorEdit$3.class
+usersEdit_Informacion\FuncionarioEdit.class
+>>>>>>> b36e289 (Problemas arreglados)
 RegistroTipoUsuario\AprendizRegistro$1.class
 Login\SelectRol$5.class
 Login\AprendizLogin$1.class
 editPertenenciaUsers\EditarPertenencia$5.class
+<<<<<<< HEAD
 Models\BitacoraDAO.class
 RegistroTipoUsuario\FuncionarioRegistro$5.class
 usersEdit_Informacion\UserExternoEdit$5.class
+=======
+Views\UsersPanelTest$1.class
+Models\BitacoraDAO.class
+RegistroTipoUsuario\FuncionarioRegistro$5.class
+usersEdit_Informacion\UserExternoEdit$5.class
+usersEdit_Informacion\FuncionarioEdit$9.class
+>>>>>>> b36e289 (Problemas arreglados)
 usersEdit_Informacion\UserAprendizEdit$7.class
 Login\AdminLogin$4.class
 usersEdit_Informacion\UserAprendizEdit$4.class
 RegistroTipoUsuario\AdminRegistro$4.class
 usersEdit_Informacion\UserInstructorEdit$6.class
+<<<<<<< HEAD
+=======
+usersEdit_Informacion\AprendizEdit$5.class
+>>>>>>> b36e289 (Problemas arreglados)
 RegistroTipoUsuario\InstructorRegistro$3.class
 usersEdit_Informacion\UserFuncionarioEdit$9.class
 Login\ExternoLogin$4.class
 usersEdit_Informacion\UserAdminEdit$1.class
 DevolverPertenencia\DevolverPertenencia$3.class
 RegistroTipoUsuario\ExternoRegistro$4.class
+<<<<<<< HEAD
 Login\ExternoLogin$1.class
 usersEdit_Informacion\UserFuncionarioEdit$6.class
+=======
+usersEdit_Informacion\ExternoEdit$4.class
+Login\ExternoLogin$1.class
+Login\SelectUser$1.class
+usersEdit_Informacion\UserFuncionarioEdit$6.class
+usersEdit_Informacion\AdminEdit$7.class
+>>>>>>> b36e289 (Problemas arreglados)
 Login\FuncionarioLogin$3.class
 Login\InstructorLogin$2.class
 Views\UsersPanelTest.class
@@ -81,11 +152,20 @@ RegistroTipoUsuario\FuncionarioRegistro$7.class
 usersEdit_Informacion\UserExternoEdit$7.class
 usersEdit_Informacion\UserAprendizEdit$5.class
 RegistroTipoUsuario\ExternoRegistro$1.class
+<<<<<<< HEAD
+=======
+usersEdit_Informacion\ExternoEdit$1.class
+>>>>>>> b36e289 (Problemas arreglados)
 usersEdit_Informacion\UserInstructorEdit$5.class
 usersEdit_Informacion\UserAprendizEdit$TipoDocumento.class
 Login\InstructorLogin$5.class
 RegistroTipoUsuario\AdminRegistro$5.class
 Login\AdminLogin$5.class
+<<<<<<< HEAD
+=======
+usersEdit_Informacion\AprendizEdit.class
+Login\SelectUser.class
+>>>>>>> b36e289 (Problemas arreglados)
 usersEdit_Informacion\UserFuncionarioEdit.class
 DevolverPertenencia\DevolverPertenencia$2.class
 usersEdit_Informacion\UserFuncionarioEdit$7.class
@@ -93,17 +173,33 @@ Models\PertenenciasDAO.class
 editPertenenciaUsers\EditarPertenencia$3.class
 Login\ExternoLogin$2.class
 RegistroTipoUsuario\FuncionarioRegistro.class
+<<<<<<< HEAD
+=======
+usersEdit_Informacion\AprendizEdit$2.class
+>>>>>>> b36e289 (Problemas arreglados)
 RegistroTipoUsuario\AdminRegistro$6.class
 usersEdit_Informacion\UserInstructorEdit$TipoDocumento.class
 RegistroTipoUsuario\AprendizRegistro$TipoDocumento.class
 AgregarPertenencias\RegistrarPertenencia$9.class
 Login\FuncionarioLogin$2.class
+<<<<<<< HEAD
 Login\InstructorLogin$4.class
 usersEdit_Informacion\UserExternoEdit$6.class
+=======
+usersEdit_Informacion\AprendizEdit$3.class
+Login\InstructorLogin$4.class
+usersEdit_Informacion\UserExternoEdit$6.class
+usersEdit_Informacion\AprendizEdit$TipoDocumento.class
+>>>>>>> b36e289 (Problemas arreglados)
 usersEdit_Informacion\UserAprendizEdit$6.class
 AgregarPertenencias\RegistrarPertenencia.class
 RegistroTipoUsuario\ExternoRegistro$2.class
 RegistroTipoUsuario\FuncionarioRegistro$8.class
+<<<<<<< HEAD
+=======
+usersEdit_Informacion\ExternoEdit$2.class
+usersEdit_Informacion\ExternoEdit.class
+>>>>>>> b36e289 (Problemas arreglados)
 RegistroTipoUsuario\InstructorRegistro$1.class
 usersEdit_Informacion\UserFuncionarioEdit$TipoDocumento.class
 editPertenenciaUsers\EditarPertenencia$2.class
@@ -116,20 +212,45 @@ Models\Users$UserTypeDocument.class
 usersEdit_Informacion\UserFuncionarioEdit$8.class
 usersEdit_Informacion\UserAdminEdit$5.class
 Login\FuncionarioLogin$4.class
+<<<<<<< HEAD
+=======
+usersEdit_Informacion\InstructorEdit$1.class
+usersEdit_Informacion\ExternoEdit$3.class
+usersEdit_Informacion\AprendizEdit$7.class
+>>>>>>> b36e289 (Problemas arreglados)
 Models\DataBase.class
 Login\AprendizLogin$5.class
 usersEdit_Informacion\UserInstructorEdit$4.class
 Controllers\ControllerUsers.class
+<<<<<<< HEAD
+=======
+usersEdit_Informacion\AdminEdit$3.class
+>>>>>>> b36e289 (Problemas arreglados)
 usersEdit_Informacion\UserFuncionarioEdit$2.class
 editPertenenciaUsers\EditarPertenencia$4.class
 com\mycompany\proyectofinaldetrimestreharsondelahoztps36\ProyectoFinaldeTrimestreHarsonDelahozTPS36.class
 Models\Bitacora.class
+<<<<<<< HEAD
 RegistroTipoUsuario\AprendizRegistro$2.class
 usersEdit_Informacion\UserExternoEdit$1.class
 AgregarPertenencias\RegistrarPertenencia$5.class
 RegistroTipoUsuario\FuncionarioRegistro$6.class
 usersEdit_Informacion\UserAprendizEdit$8.class
 usersEdit_Informacion\UserFuncionarioEdit$3.class
+=======
+usersEdit_Informacion\InstructorEdit$7.class
+Login\SelectUser$5.class
+RegistroTipoUsuario\AprendizRegistro$2.class
+usersEdit_Informacion\UserExternoEdit$1.class
+usersEdit_Informacion\AprendizEdit$1.class
+AgregarPertenencias\RegistrarPertenencia$5.class
+RegistroTipoUsuario\FuncionarioRegistro$6.class
+usersEdit_Informacion\FuncionarioEdit$TipoDocumento.class
+usersEdit_Informacion\UserAprendizEdit$8.class
+usersEdit_Informacion\UserFuncionarioEdit$3.class
+usersEdit_Informacion\InstructorEdit$TipoDocumento.class
+usersEdit_Informacion\AdminEdit$4.class
+>>>>>>> b36e289 (Problemas arreglados)
 Views\ProgramasPanelTest.class
 Login\LoginInicio$1.class
 Models\Pertenencias.class
@@ -138,6 +259,10 @@ RegistroTipoUsuario\AdminRegistro$2.class
 RegistroTipoUsuario\ExternoRegistro$5.class
 Login\InstructorLogin$1.class
 usersEdit_Informacion\UserAprendizEdit$9.class
+<<<<<<< HEAD
+=======
+usersEdit_Informacion\InstructorEdit$6.class
+>>>>>>> b36e289 (Problemas arreglados)
 Login\ExternoLogin.class
 Login\SelectRol$3.class
 RegistroTipoUsuario\ExternoRegistro.class
@@ -147,6 +272,11 @@ Login\FuncionarioLogin$5.class
 usersEdit_Informacion\UserAprendizEdit$3.class
 DevolverPertenencia\DevolverPertenencia$4.class
 editPertenenciaUsers\TabladePertenenciasAdmin.class
+<<<<<<< HEAD
+=======
+usersEdit_Informacion\AprendizEdit$6.class
+Login\SelectUser$4.class
+>>>>>>> b36e289 (Problemas arreglados)
 RegistroTipoUsuario\FuncionarioRegistro$2.class
 Login\LoginEntradaUsers$5.class
 Login\AdminLogin.class
@@ -157,6 +287,10 @@ Login\SelectRol$2.class
 usersEdit_Informacion\UserExternoEdit$2.class
 Login\FuncionarioLogin.class
 AgregarPertenencias\RegistrarPertenencia$6.class
+<<<<<<< HEAD
+=======
+usersEdit_Informacion\FuncionarioEdit$6.class
+>>>>>>> b36e289 (Problemas arreglados)
 RegistroTipoUsuario\InstructorRegistro$6.class
 Login\LoginInicio.class
 DevolverPertenencia\DevolverPertenencia.class
@@ -164,27 +298,60 @@ RegistroTipoUsuario\InstructorRegistro.class
 RegistroTipoUsuario\ExternoRegistro$TipoDocumento.class
 usersEdit_Informacion\UserAdminEdit$TipoDocumento.class
 AgregarPertenencias\RegistrarPertenencia$11.class
+<<<<<<< HEAD
 Login\SelectRol.class
 RegistroTipoUsuario\InstructorRegistro$TipoDocumento.class
 usersEdit_Informacion\UserAprendizEdit$1.class
+=======
+usersEdit_Informacion\ExternoEdit$7.class
+Login\SelectRol.class
+RegistroTipoUsuario\InstructorRegistro$TipoDocumento.class
+usersEdit_Informacion\InstructorEdit$3.class
+usersEdit_Informacion\UserAprendizEdit$1.class
+usersEdit_Informacion\AprendizEdit$8.class
+>>>>>>> b36e289 (Problemas arreglados)
 RegistroTipoUsuario\AdminRegistro$1.class
 Login\AdminLogin$1.class
 editPertenenciaUsers\TablaPertenencias$1.class
 Login\LoginEntradaUsers$2.class
 Login\InstructorLogin.class
 usersEdit_Informacion\UserAdminEdit$4.class
+<<<<<<< HEAD
+=======
+usersEdit_Informacion\FuncionarioEdit$3.class
+>>>>>>> b36e289 (Problemas arreglados)
 Models\Users.class
 Login\LoginEntradaUsers$TipoDocumento.class
 usersEdit_Informacion\UserAdminEdit$7.class
 Models\MenuTest.class
+<<<<<<< HEAD
 usersEdit_Informacion\UserExternoEdit$TipoDocumento.class
 Login\LoginEntradaUsers$4.class
 AgregarPertenencias\RegistrarPertenencia$12.class
 AgregarPertenencias\RegistrarPertenencia$4.class
+=======
+usersEdit_Informacion\ExternoEdit$8.class
+usersEdit_Informacion\UserExternoEdit$TipoDocumento.class
+usersEdit_Informacion\AprendizEdit$9.class
+usersEdit_Informacion\AdminEdit$TipoDocumento.class
+Login\LoginEntradaUsers$4.class
+AgregarPertenencias\RegistrarPertenencia$12.class
+usersEdit_Informacion\AdminEdit$1.class
+usersEdit_Informacion\FuncionarioEdit$4.class
+AgregarPertenencias\RegistrarPertenencia$4.class
+usersEdit_Informacion\FuncionarioEdit$5.class
+usersEdit_Informacion\InstructorEdit.class
+>>>>>>> b36e289 (Problemas arreglados)
 usersEdit_Informacion\UserAdminEdit$6.class
 Models\UsersDAO.class
 Login\SelectRol$1.class
 Login\LoginEntradaUsers$3.class
+<<<<<<< HEAD
 RegistroTipoUsuario\InstructorRegistro$7.class
+=======
+usersEdit_Informacion\InstructorEdit$2.class
+RegistroTipoUsuario\InstructorRegistro$7.class
+usersEdit_Informacion\AdminEdit$2.class
+>>>>>>> b36e289 (Problemas arreglados)
 usersEdit_Informacion\UserFuncionarioEdit$1.class
 RegistroTipoUsuario\FuncionarioRegistro$1.class

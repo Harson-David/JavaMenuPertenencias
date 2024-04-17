@@ -46,6 +46,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -101,6 +102,55 @@
                               </Group>
                           </Group>
                       </Group>
+=======
+              <Group type="102" alignment="1" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="label27" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="label30" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="label28" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="label31" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="nom" alignment="0" min="-2" pref="197" max="-2" attributes="0"/>
+                                      <Component id="ape" alignment="0" min="-2" pref="197" max="-2" attributes="0"/>
+                                      <Component id="contra" alignment="0" min="-2" pref="197" max="-2" attributes="0"/>
+                                      <Component id="tipoDoc" min="-2" max="-2" attributes="0"/>
+                                      <Component id="numDoc" min="-2" pref="197" max="-2" attributes="0"/>
+                                      <Component id="jornada" min="-2" pref="197" max="-2" attributes="0"/>
+                                      <Component id="label32" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="label34" min="-2" max="-2" attributes="0"/>
+                                      <Component id="dir" alignment="0" min="-2" pref="197" max="-2" attributes="0"/>
+                                      <Component id="numCon" alignment="0" min="-2" pref="197" max="-2" attributes="0"/>
+                                      <Component id="mail" alignment="0" min="-2" pref="197" max="-2" attributes="0"/>
+                                      <Component id="label39" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="label38" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="label37" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cenFormacion" alignment="0" min="-2" pref="197" max="-2" attributes="0"/>
+                                      <Component id="label35" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="coordinacion" alignment="0" min="-2" pref="197" max="-2" attributes="0"/>
+                                      <Component id="label1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cargo" min="-2" pref="197" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Component id="label29" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="228" max="-2" attributes="0"/>
+                          <Component id="registrar" min="-2" pref="301" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace pref="31" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="button2" min="-2" pref="301" max="-2" attributes="0"/>
+                      <Component id="label3" min="-2" pref="349" max="-2" attributes="0"/>
+>>>>>>> b36e289 (Problemas arreglados)
                   </Group>
               </Group>
           </Group>
@@ -109,6 +159,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                           <Component id="label27" min="-2" max="-2" attributes="0"/>
@@ -124,18 +175,48 @@
                           <Component id="label34" min="-2" pref="29" max="-2" attributes="0"/>
                       </Group>
                       <Component id="label1" min="-2" max="-2" attributes="0"/>
+=======
+                      <Component id="label3" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="label1" min="-2" max="-2" attributes="0"/>
+                              <Component id="label27" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                          <Component id="tipoDoc" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="cargo" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="label28" min="-2" max="-2" attributes="0"/>
+                      <Component id="label34" min="-2" pref="29" max="-2" attributes="0"/>
+>>>>>>> b36e289 (Problemas arreglados)
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="numDoc" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="coordinacion" alignment="3" min="-2" max="-2" attributes="0"/>
+<<<<<<< HEAD
                       <Component id="cargo" alignment="3" min="-2" max="-2" attributes="0"/>
+=======
+>>>>>>> b36e289 (Problemas arreglados)
                   </Group>
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="label30" min="-2" max="-2" attributes="0"/>
                       <Component id="label35" min="-2" pref="20" max="-2" attributes="0"/>
                   </Group>
+<<<<<<< HEAD
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
@@ -160,6 +241,24 @@
                           <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                           <Component id="registrar" min="-2" pref="86" max="-2" attributes="0"/>
                       </Group>
+=======
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="nom" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="cenFormacion" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                          <Component id="label31" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="label37" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="ape" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="numCon" alignment="1" min="-2" max="-2" attributes="0"/>
+>>>>>>> b36e289 (Problemas arreglados)
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
@@ -168,6 +267,7 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -183,13 +283,36 @@
                           </Group>
                       </Group>
                       <Component id="button2" min="-2" pref="82" max="-2" attributes="0"/>
+=======
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="contra" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="dir" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                          <Component id="label32" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
+                          <Component id="label39" min="-2" max="-2" attributes="0"/>
+                      </Group>
+>>>>>>> b36e289 (Problemas arreglados)
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jornada" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="mail" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
+<<<<<<< HEAD
                   <EmptySpace pref="234" max="32767" attributes="0"/>
+=======
+                  <EmptySpace pref="95" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="registrar" min="-2" pref="86" max="-2" attributes="0"/>
+                      <Component id="button2" min="-2" pref="82" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+>>>>>>> b36e289 (Problemas arreglados)
               </Group>
           </Group>
         </DimensionLayout>

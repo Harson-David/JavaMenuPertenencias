@@ -5,10 +5,10 @@
 package usersEdit_Informacion;
 
 import Controllers.ControllerUsers;
-import Login.AdminLogin;
 import Login.ExternoLogin;
 import Login.LoginEntradaUsers;
 import Models.Users;
+import Views.UsersPanelTest;
 import java.util.Arrays;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
  *
  * @author Administrador
  */
-public class UserExternoEdit extends javax.swing.JFrame {
+public class ExternoEdit extends javax.swing.JFrame {
 
     ControllerUsers user;
 
@@ -27,7 +27,7 @@ public class UserExternoEdit extends javax.swing.JFrame {
         this.userId = userId;
     }
 
-    public UserExternoEdit(int userId) {
+    public ExternoEdit(int userId) {
         initComponents();
         user = new ControllerUsers();
         userID.setVisible(false);
@@ -220,7 +220,7 @@ public class UserExternoEdit extends javax.swing.JFrame {
                                     .addComponent(label27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(25, 25, 25)
                                     .addComponent(label14, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(63, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -273,11 +273,7 @@ public class UserExternoEdit extends javax.swing.JFrame {
                     .addComponent(actualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(68, 68, 68)
                 .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-<<<<<<< HEAD
-                .addContainerGap(93, Short.MAX_VALUE))
-=======
-                .addContainerGap(99, Short.MAX_VALUE))
->>>>>>> b36e289 (Problemas arreglados)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -288,17 +284,48 @@ public class UserExternoEdit extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-=======
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
->>>>>>> b36e289 (Problemas arreglados)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarActionPerformed
+        try {
+            int num = Integer.parseInt(userID.getText());
+            String tipoDocumento = tipoDoc.getSelectedItem().toString();
+            String contrasena = contra.getText();
+            String nombres = nom.getText();
+            String apellidos = ape.getText();
+            int numContacto = Integer.parseInt(numCont.getText());
+            String direccion = dir.getText();
+            String email = mail.getText();
+            String lugar = lugarProc.getText();
+            Users.UserRole userRole = Users.UserRole.EXTERNO;
+            Users.UserTypeDocument userTypeDocument = Users.UserTypeDocument.valueOf(tipoDocumento);
+
+            Users updateUser = new Users(num, userTypeDocument, userRole, contrasena, nombres, apellidos, numContacto, direccion, email, lugar);
+            user.updateExterno(updateUser);
+
+            JOptionPane.showMessageDialog(null, "Usuario actualizado con éxito.");
+            UsersPanelTest usersPanel = new UsersPanelTest();
+            usersPanel.setLocationRelativeTo(null);
+            usersPanel.setVisible(true);
+            dispose();
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Por favor, ingrese valores numéricos válidos para el número de documento y número de contacto.");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al actualizar el usuario: " + e.getMessage());
+        }
+
+    }//GEN-LAST:event_actualizarActionPerformed
+
+    private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
+        UsersPanelTest usersPanel = new UsersPanelTest();
+        usersPanel.setLocationRelativeTo(null);
+        usersPanel.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_button2ActionPerformed
 
     private void lugarProcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lugarProcActionPerformed
         // TODO add your handling code here:
@@ -311,13 +338,6 @@ public class UserExternoEdit extends javax.swing.JFrame {
     private void mailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mailActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_mailActionPerformed
-
-    private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
-        ExternoLogin log = new ExternoLogin();
-        log.setLocationRelativeTo(null);
-        log.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_button2ActionPerformed
 
     private void tipoDocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoDocActionPerformed
         TipoDocumento selectedDocumentType = TipoDocumento.valueOf((String) tipoDoc.getSelectedItem());
@@ -334,38 +354,8 @@ public class UserExternoEdit extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_userIDActionPerformed
 
-    private void actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarActionPerformed
-        try {
-            int num = Integer.parseInt(userID.getText());
-            String tipoDocumento = tipoDoc.getSelectedItem().toString();
-            String contrasena = contra.getText();
-            String nombres = nom.getText();
-            String apellidos = ape.getText();
-            int numContacto = Integer.parseInt(numCont.getText());
-            String direccion = dir.getText();
-            String email = mail.getText();
-            String lugar = lugarProc.getText();
-            Users.UserRole userRole = Users.UserRole.EXTERNO;
-            Users.UserTypeDocument userTypeDocument = Users.UserTypeDocument.valueOf(tipoDocumento);
-
-            Users updateUser = new Users(num,userTypeDocument, userRole,contrasena, nombres, apellidos, numContacto, direccion, email, lugar);
-            user.updateExterno(updateUser);
-
-            JOptionPane.showMessageDialog(null, "Usuario actualizado con éxito.");
-            ExternoLogin adm = new ExternoLogin();
-            adm.setLocationRelativeTo(null);
-            adm.setVisible(true);
-            dispose();
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "Por favor, ingrese valores numéricos válidos para el número de documento y número de contacto.");
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error al actualizar el usuario: " + e.getMessage());
-        }
-    
-    
-    }//GEN-LAST:event_actualizarActionPerformed
-
     /**
+     * @param args the command line arguments
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -381,21 +371,20 @@ public class UserExternoEdit extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(UserExternoEdit.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ExternoEdit.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(UserExternoEdit.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ExternoEdit.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(UserExternoEdit.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ExternoEdit.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(UserExternoEdit.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ExternoEdit.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                UserExternoEdit userextEdit = new UserExternoEdit(LoginEntradaUsers.userId);
+                ExternoEdit userextEdit = new ExternoEdit(LoginEntradaUsers.userId);
                 userextEdit.setVisible(true);
             }
         });
