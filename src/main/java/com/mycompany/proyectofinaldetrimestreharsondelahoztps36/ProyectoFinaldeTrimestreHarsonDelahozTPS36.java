@@ -7,7 +7,7 @@ import Login.LoginInicio;
 import javax.swing.SwingUtilities;
 
 
-public class ProyectoFinalAPP {
+public class ProyectoFinaldeTrimestreHarsonDelahozTPS36 {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
