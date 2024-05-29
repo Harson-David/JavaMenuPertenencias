@@ -1,5 +1,10 @@
 package Views;
 
+<<<<<<< HEAD
+=======
+import Login.SelectRol;
+import Login.SelectUser;
+>>>>>>> b36e289 (Problemas arreglados)
 import Models.MenuTest;
 import Models.Users;
 import Models.UsersDAO;
@@ -8,6 +13,20 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.util.List;
+<<<<<<< HEAD
+=======
+import java.util.Map;
+import usersEdit_Informacion.AdminEdit;
+import usersEdit_Informacion.AprendizEdit;
+import usersEdit_Informacion.ExternoEdit;
+import usersEdit_Informacion.FuncionarioEdit;
+import usersEdit_Informacion.InstructorEdit;
+import usersEdit_Informacion.UserAdminEdit;
+import usersEdit_Informacion.UserAprendizEdit;
+import usersEdit_Informacion.UserExternoEdit;
+import usersEdit_Informacion.UserFuncionarioEdit;
+import usersEdit_Informacion.UserInstructorEdit;
+>>>>>>> b36e289 (Problemas arreglados)
 
 public class UsersPanelTest extends JFrame {
 
@@ -77,6 +96,7 @@ public class UsersPanelTest extends JFrame {
     }
 
     private void addUser() {
+<<<<<<< HEAD
         // Solicitar los datos al usuario utilizando JOptionPane
         String userIdStr = JOptionPane.showInputDialog("ID de usuario:");
         int userId = Integer.parseInt(userIdStr);
@@ -106,6 +126,17 @@ public class UsersPanelTest extends JFrame {
         Users user = new Users(userId, userRol, typeDocument, password, name, lastName, numContact, address, email, jornada, tipoFormacion, centroFormacion, coordinacion, numFicha, formacion, cargoActual, lugarProcedencia);
         UsersDAO.create(user);
         loadUsers();
+=======
+        try {
+            SelectUser rol = new SelectUser();
+            rol.setLocationRelativeTo(null);
+            rol.setVisible(true);
+            dispose();
+        } catch (Exception ex) {
+            System.err.println("Error al abrir la ventana EleccionRol: " + ex.getMessage());
+            ex.printStackTrace();
+        }
+>>>>>>> b36e289 (Problemas arreglados)
     }
 
     private void editUser() {
@@ -113,6 +144,7 @@ public class UsersPanelTest extends JFrame {
         if (selectedRow >= 0) {
             int userId = (int) table.getValueAt(selectedRow, 0);
 
+<<<<<<< HEAD
             Users user = UsersDAO.findOne(userId);
 
             String password = JOptionPane.showInputDialog("Nueva Contraseña:");
@@ -150,6 +182,51 @@ public class UsersPanelTest extends JFrame {
 
             UsersDAO.update(user);
             loadUsers();
+=======
+            Map<String, Object> userAndRole = UsersDAO.findUserAndRole(userId);
+
+            if (userAndRole != null) {
+                Users.UserRole selectedRole = (Users.UserRole) userAndRole.get("role");
+
+                switch (selectedRole) {
+                    case APRENDIZ -> {
+                        AprendizEdit aprendiz = new AprendizEdit(userId);
+                        aprendiz.setLocationRelativeTo(null);
+                        aprendiz.setVisible(true);
+                        dispose();
+                    }
+                    case INSTRUCTOR -> {
+                        InstructorEdit instructor = new InstructorEdit(userId);
+                        instructor.setLocationRelativeTo(null);
+                        instructor.setVisible(true);
+                        dispose();
+                    }
+                    case FUNCIONARIO -> {
+                        FuncionarioEdit fun = new FuncionarioEdit(userId);
+                        fun.setLocationRelativeTo(null);
+                        fun.setVisible(true);
+                        dispose();
+                    }
+                    case EXTERNO -> {
+                        ExternoEdit externo = new ExternoEdit(userId);
+                        externo.setLocationRelativeTo(null);
+                        externo.setVisible(true);
+                        dispose();
+                    }
+                    case ADMINISTRADOR -> {
+                        AdminEdit admin = new AdminEdit(userId);
+                        admin.setLocationRelativeTo(null);
+                        admin.setVisible(true);
+                        dispose();
+                    }
+                    default ->
+                        System.out.println("No hay una vista específica para este rol.");
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "No se encontró información del usuario.");
+            }
+
+>>>>>>> b36e289 (Problemas arreglados)
         } else {
             JOptionPane.showMessageDialog(null, "Debe seleccionar un usuario para editar.");
         }
@@ -221,7 +298,11 @@ public class UsersPanelTest extends JFrame {
         if (selectedRow >= 0) {
             return (int) table.getValueAt(selectedRow, 0);
         } else {
+<<<<<<< HEAD
             return -1; 
+=======
+            return -1;
+>>>>>>> b36e289 (Problemas arreglados)
         }
     }
 
@@ -232,7 +313,11 @@ public class UsersPanelTest extends JFrame {
             Users user = UsersDAO.findOne(userId);
             return user;
         } else {
+<<<<<<< HEAD
             return null; 
+=======
+            return null;
+>>>>>>> b36e289 (Problemas arreglados)
         }
     }
 

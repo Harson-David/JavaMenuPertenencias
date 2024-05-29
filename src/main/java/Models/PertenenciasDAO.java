@@ -14,9 +14,23 @@ public class PertenenciasDAO {
 
     private static final String INSERT_QUERY = "INSERT INTO pertenencias (pertenencia_id, pertenencia_tipo, pertenencia_descripcion, idUsuario) VALUES (?, ?, ?, ?)";
     private static final String SELECT_ALL_QUERY = "SELECT pertenencia_id, pertenencia_tipo, pertenencia_descripcion, idUsuario FROM pertenencias";
+<<<<<<< HEAD
     private static final String SELECT_ONE_QUERY = "SELECT pertenencia_id, pertenencia_tipo, pertenencia_descripcion, idUsuario FROM pertenencias WHERE pertenencia_id=?";
     private static final String UPDATE_QUERY = "UPDATE pertenencias SET pertenencia_tipo=?, pertenencia_descripcion=?, idUsuario=? WHERE pertenencia_id=?";
     private static final String DELETE_QUERY = "DELETE FROM pertenencias WHERE pertenencia_id=?";
+=======
+    private static final String SELECT_ONE_QUERY = """
+            SELECT pertenencia_id, pertenencia_tipo, pertenencia_descripcion, idUsuario,
+            bitacora_id, bitacora_fecha_ingreso, bitacora_hora_entrada, bitacora_hora_salida, bitacora_tipo FROM pertenencias INNER JOIN 
+            bitacora WHERE pertenencia_id=? AND bitacora_id= ?""";
+    private static final String UPDATE_QUERY = "UPDATE pertenencias SET pertenencia_tipo=?, pertenencia_descripcion=?, idUsuario=? WHERE pertenencia_id=?";
+    private static final String DELETE_QUERY = "DELETE pertenencias_bitacora, pertenencias, bitacora "
+            + "FROM pertenencias_bitacora "
+            + "INNER JOIN pertenencias ON pertenencias_bitacora.pertenencia_id = pertenencias.pertenencia_id "
+            + "INNER JOIN bitacora ON pertenencias_bitacora.bitacora_id = bitacora.bitacora_id "
+            + "WHERE pertenencias_bitacora.pertenencia_id = ? AND bitacora.bitacora_id = ?";
+
+>>>>>>> b36e289 (Problemas arreglados)
     private static final String SELECT_BY_USER_AND_TYPE_QUERY
             = "SELECT p.pertenencia_id, p.pertenencia_tipo, p.pertenencia_descripcion, p.idUsuario, pb.bitacora_id, "
             + "b.bitacora_fecha_ingreso, b.bitacora_hora_entrada, b.bitacora_hora_salida, b.bitacora_tipo "
@@ -109,6 +123,7 @@ public class PertenenciasDAO {
         return pertenenciasList;
     }
 
+<<<<<<< HEAD
     public static Pertenencias findOne(String pertenenciaId) {
         Pertenencias pertenencia = null;
         try (Connection connection = DataBase.getConnection(); PreparedStatement statement = connection.prepareStatement(SELECT_ONE_QUERY)) {
@@ -123,6 +138,23 @@ public class PertenenciasDAO {
         }
         return pertenencia;
     }
+=======
+    public static Pertenencias findOne(String pertenenciaId, int bitacoraId) {
+    Pertenencias pertenencia = null;
+    try (Connection connection = DataBase.getConnection(); PreparedStatement statement = connection.prepareStatement(SELECT_ONE_QUERY)) {
+        statement.setString(1, pertenenciaId);
+        statement.setInt(2, bitacoraId);
+        try (ResultSet resultSet = statement.executeQuery()) {
+            if (resultSet.next()) {
+                pertenencia = mapResultSetToPertenencia(resultSet);
+            }
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    return pertenencia;
+}
+>>>>>>> b36e289 (Problemas arreglados)
 
     public static void update(Pertenencias pertenencia) {
         try (Connection connection = DataBase.getConnection(); PreparedStatement statement = connection.prepareStatement(UPDATE_QUERY)) {
@@ -141,8 +173,11 @@ public class PertenenciasDAO {
         try (Connection connection = DataBase.getConnection(); PreparedStatement statement = connection.prepareStatement(UPDATE_QUERY)) {
             statement.setString(1, pertenencia.getTipo());
             statement.setString(2, pertenencia.getDescripcion());
+<<<<<<< HEAD
             //statement.setInt(3, pertenencia.getUserId());
             //statement.setString(4, pertenencia.getPertenencia_id());
+=======
+>>>>>>> b36e289 (Problemas arreglados)
             statement.executeUpdate();
             System.out.println("Pertenencia actualizada: " + pertenencia.toString());
         } catch (SQLException e) {
@@ -162,10 +197,18 @@ public class PertenenciasDAO {
         }
     }
 
+<<<<<<< HEAD
     public static void delete(String pertenenciaId) {
         Pertenencias deletedPertenencia = findOne(pertenenciaId);
         try (Connection connection = DataBase.getConnection(); PreparedStatement statement = connection.prepareStatement(DELETE_QUERY)) {
             statement.setString(1, pertenenciaId);
+=======
+    public static void delete(String pertenenciaId, int bitacoraId) {
+        Pertenencias deletedPertenencia = findOne(pertenenciaId, bitacoraId);
+        try (Connection connection = DataBase.getConnection(); PreparedStatement statement = connection.prepareStatement(DELETE_QUERY)) {
+            statement.setString(1, pertenenciaId);
+            statement.setInt(2, bitacoraId);
+>>>>>>> b36e289 (Problemas arreglados)
             statement.executeUpdate();
             System.out.println("Pertenencia eliminada: " + deletedPertenencia.toString());
         } catch (SQLException e) {
@@ -207,6 +250,7 @@ public class PertenenciasDAO {
         return pertenenciasList;
     }
 
+<<<<<<< HEAD
 //    public static List<Pertenencias> findByUserAndTypeBita(int userId, String userType, String bitacoraType) {
 //        List<Pertenencias> pertenencias = new ArrayList<>();
 //        try (Connection connection = DataBase.getConnection(); PreparedStatement statement = connection.prepareStatement(PERTENENCIAS_BITACORA_QUERY)) {
@@ -223,6 +267,8 @@ public class PertenenciasDAO {
 //        }
 //        return pertenencias;
 //    }
+=======
+>>>>>>> b36e289 (Problemas arreglados)
     public void crearRelacionPertenenciaBitacora(String pertenenciaId, int bitacoraId) {
         String query = "INSERT INTO pertenencias_bitacora (pertenencia_id, bitacora_id) VALUES (?, ?)";
 

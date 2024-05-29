@@ -30,7 +30,11 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+<<<<<<< HEAD
               <EmptySpace min="0" pref="2" max="32767" attributes="0"/>
+=======
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+>>>>>>> b36e289 (Problemas arreglados)
           </Group>
       </Group>
     </DimensionLayout>
@@ -170,7 +174,11 @@
                               <Group type="102" attributes="0">
                                   <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                                   <Component id="label38" min="-2" max="-2" attributes="0"/>
+<<<<<<< HEAD
                                   <EmptySpace max="32767" attributes="0"/>
+=======
+                                  <EmptySpace pref="17" max="32767" attributes="0"/>
+>>>>>>> b36e289 (Problemas arreglados)
                                   <Component id="dir" min="-2" pref="42" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                   <Component id="label39" min="-2" max="-2" attributes="0"/>
@@ -184,7 +192,11 @@
                       <Component id="userID" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                       <Component id="jornada" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
                   </Group>
+<<<<<<< HEAD
                   <EmptySpace pref="61" max="32767" attributes="0"/>
+=======
+                  <EmptySpace pref="68" max="32767" attributes="0"/>
+>>>>>>> b36e289 (Problemas arreglados)
               </Group>
           </Group>
         </DimensionLayout>
@@ -299,6 +311,9 @@
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="numContActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="mail">
           <Properties>

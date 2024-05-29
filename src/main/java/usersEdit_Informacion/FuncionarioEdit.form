@@ -51,21 +51,21 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Group type="102" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
                                           <Component id="contra" max="32767" attributes="0"/>
                                           <EmptySpace min="140" pref="140" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="label27" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="tipoDoc" min="-2" max="-2" attributes="0"/>
+                                              <Component id="tipoDoc" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="ape" alignment="0" min="-2" pref="192" max="-2" attributes="0"/>
-                                              <Component id="label29" min="-2" max="-2" attributes="0"/>
-                                              <Component id="label1" min="-2" max="-2" attributes="0"/>
-                                              <Component id="cargo" min="-2" pref="192" max="-2" attributes="0"/>
-                                              <Component id="label31" min="-2" max="-2" attributes="0"/>
+                                              <Component id="label29" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="label1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="cargo" alignment="0" min="-2" pref="192" max="-2" attributes="0"/>
+                                              <Component id="label31" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="label30" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
@@ -78,20 +78,20 @@
                                       <Component id="cenFormacion" alignment="0" min="-2" pref="174" max="-2" attributes="0"/>
                                       <Component id="label37" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="numCont" alignment="0" min="-2" pref="174" max="-2" attributes="0"/>
-                                      <Component id="label38" min="-2" max="-2" attributes="0"/>
-                                      <Component id="dir" min="-2" pref="174" max="-2" attributes="0"/>
-                                      <Component id="label39" min="-2" max="-2" attributes="0"/>
+                                      <Component id="label38" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="dir" alignment="0" min="-2" pref="174" max="-2" attributes="0"/>
+                                      <Component id="label39" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="mail" alignment="0" min="-2" pref="174" max="-2" attributes="0"/>
                                       <Component id="jornada" alignment="0" min="-2" pref="174" max="-2" attributes="0"/>
                                       <Component id="label40" alignment="0" min="-2" pref="94" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Component id="nom" min="-2" pref="190" max="-2" attributes="0"/>
+                              <Component id="nom" alignment="0" min="-2" pref="190" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="17" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="label3" min="-2" max="-2" attributes="0"/>
-                              <Component id="userID" min="-2" pref="251" max="-2" attributes="0"/>
+                              <Component id="label3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="userID" alignment="0" min="-2" pref="251" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
@@ -131,10 +131,10 @@
                   <Component id="label35" min="-2" pref="20" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <Component id="cenFormacion" min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                                   <Component id="nom" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -145,11 +145,11 @@
                           </Group>
                           <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
                           <Component id="contra" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="25" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
                                   <Component id="label30" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -170,12 +170,12 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="118" max="-2" attributes="0"/>
                                   <Component id="userID" min="-2" pref="36" max="-2" attributes="0"/>
-                                  <EmptySpace pref="32" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="label29" min="-2" max="-2" attributes="0"/>
-                              <Component id="dir" min="-2" max="-2" attributes="0"/>
+                              <Component id="label29" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="dir" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                           <Component id="label39" min="-2" max="-2" attributes="0"/>
@@ -183,12 +183,12 @@
                       </Group>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="mail" min="-2" max="-2" attributes="0"/>
-                      <Component id="label1" min="-2" max="-2" attributes="0"/>
+                      <Component id="mail" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="label1" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <Component id="cargo" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       </Group>
@@ -198,7 +198,7 @@
                       </Group>
                   </Group>
                   <Component id="jornada" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="60" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="actualizar" alignment="1" min="-2" pref="86" max="-2" attributes="0"/>
                       <Component id="button2" alignment="1" min="-2" pref="82" max="-2" attributes="0"/>

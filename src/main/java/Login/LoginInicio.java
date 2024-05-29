@@ -44,7 +44,11 @@ public class LoginInicio extends javax.swing.JFrame {
         jLabel2.setText("No esta Registrado?");
 
         jButton1.setBackground(new java.awt.Color(0, 204, 204));
+<<<<<<< HEAD
         jButton1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+=======
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+>>>>>>> b36e289 (Problemas arreglados)
         jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("INICIAR SESION");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -65,7 +69,11 @@ public class LoginInicio extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+<<<<<<< HEAD
         jLabel3.setText("Ingreso SENA TIC");
+=======
+        jLabel3.setText("INGRESO SENA TIC");
+>>>>>>> b36e289 (Problemas arreglados)
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -79,7 +87,11 @@ public class LoginInicio extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(92, 92, 92)
                         .addComponent(jLabel3)))
+<<<<<<< HEAD
                 .addContainerGap(135, Short.MAX_VALUE))
+=======
+                .addContainerGap(106, Short.MAX_VALUE))
+>>>>>>> b36e289 (Problemas arreglados)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)

@@ -8,11 +8,16 @@ import Controllers.ControllerUsers;
 import Login.AdminLogin;
 import Login.LoginEntradaUsers;
 import Models.Users;
+import Views.UsersPanelTest;
 import java.util.Arrays;
 import java.util.List;
 import javax.swing.JOptionPane;
 
-public final class UserAdminEdit extends javax.swing.JFrame {
+/**
+ *
+ * @author Administrador
+ */
+public class AdminEdit extends javax.swing.JFrame {
 
     ControllerUsers user;
 
@@ -22,7 +27,7 @@ public final class UserAdminEdit extends javax.swing.JFrame {
         this.userId = userId;
     }
 
-    public UserAdminEdit(int userId) {
+    public AdminEdit(int userId) {
         initComponents();
         user = new ControllerUsers();
         userID.setVisible(false);
@@ -266,11 +271,7 @@ public final class UserAdminEdit extends javax.swing.JFrame {
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(29, 29, 29)
                                 .addComponent(label38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-<<<<<<< HEAD
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-=======
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
->>>>>>> b36e289 (Problemas arreglados)
                                 .addComponent(dir, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(label39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
@@ -279,11 +280,7 @@ public final class UserAdminEdit extends javax.swing.JFrame {
                     .addComponent(mail, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(userID, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jornada, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-<<<<<<< HEAD
-                .addContainerGap(61, Short.MAX_VALUE))
-=======
                 .addContainerGap(68, Short.MAX_VALUE))
->>>>>>> b36e289 (Problemas arreglados)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -296,37 +293,18 @@ public final class UserAdminEdit extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-<<<<<<< HEAD
-                .addGap(0, 2, Short.MAX_VALUE))
-=======
                 .addGap(0, 0, Short.MAX_VALUE))
->>>>>>> b36e289 (Problemas arreglados)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void contraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contraActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_contraActionPerformed
-
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
-        AdminLogin log = new AdminLogin();
-        log.setLocationRelativeTo(null);
-        log.setVisible(true);
+        UsersPanelTest usersPanel = new UsersPanelTest();
+        usersPanel.setLocationRelativeTo(null);
+        usersPanel.setVisible(true);
         dispose();
     }//GEN-LAST:event_button2ActionPerformed
-
-    private void tipoDocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoDocActionPerformed
-        TipoDocumento selectedDocumentType = TipoDocumento.valueOf((String) tipoDoc.getSelectedItem());
-        List<TipoDocumento> validDocumentTypes = Arrays.asList(TipoDocumento.CC, TipoDocumento.TI, TipoDocumento.CE, TipoDocumento.PASAPORTE);
-
-        if (validDocumentTypes.contains(selectedDocumentType)) {
-            System.out.println("Documento válido: " + selectedDocumentType);
-        } else {
-            System.out.println("Documento inválido");
-        }
-    }//GEN-LAST:event_tipoDocActionPerformed
 
     private void actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarActionPerformed
         try {
@@ -351,9 +329,9 @@ public final class UserAdminEdit extends javax.swing.JFrame {
 
             JOptionPane.showMessageDialog(null, "Usuario actualizado con éxito.");
 
-            AdminLogin adm = new AdminLogin();
-            adm.setLocationRelativeTo(null);
-            adm.setVisible(true);
+            UsersPanelTest usersPanel = new UsersPanelTest();
+            usersPanel.setLocationRelativeTo(null);
+            usersPanel.setVisible(true);
             dispose();
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Por favor, ingrese valores numéricos válidos para el número de documento y número de contacto.");
@@ -362,13 +340,28 @@ public final class UserAdminEdit extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_actualizarActionPerformed
 
-    private void userIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userIDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_userIDActionPerformed
-
     private void numContActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numContActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_numContActionPerformed
+
+    private void contraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_contraActionPerformed
+
+    private void tipoDocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoDocActionPerformed
+        TipoDocumento selectedDocumentType = TipoDocumento.valueOf((String) tipoDoc.getSelectedItem());
+        List<TipoDocumento> validDocumentTypes = Arrays.asList(TipoDocumento.CC, TipoDocumento.TI, TipoDocumento.CE, TipoDocumento.PASAPORTE);
+
+        if (validDocumentTypes.contains(selectedDocumentType)) {
+            System.out.println("Documento válido: " + selectedDocumentType);
+        } else {
+            System.out.println("Documento inválido");
+        }
+    }//GEN-LAST:event_tipoDocActionPerformed
+
+    private void userIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_userIDActionPerformed
 
     /**
      * @param args the command line arguments
@@ -387,28 +380,24 @@ public final class UserAdminEdit extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(UserAdminEdit.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminEdit.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(UserAdminEdit.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminEdit.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(UserAdminEdit.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminEdit.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(UserAdminEdit.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminEdit.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                UserAdminEdit userAdminEdit = new UserAdminEdit(LoginEntradaUsers.userId);
+                AdminEdit userAdminEdit = new AdminEdit(LoginEntradaUsers.userId);
                 userAdminEdit.setVisible(true);
             }
         });
     }
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Button actualizar;
