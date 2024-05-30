@@ -91,16 +91,10 @@ public class PertenenciasPanelTest extends JFrame {
         int selectedRow = table.getSelectedRow();
         if (selectedRow >= 0) {
             String pertenenciaId = (String) table.getValueAt(selectedRow, 0);
-<<<<<<< HEAD
-            int confirm = JOptionPane.showConfirmDialog(null, "¿Está seguro de eliminar esta pertenencia?", "Eliminar Pertenencia", JOptionPane.YES_NO_OPTION);
-            if (confirm == JOptionPane.YES_OPTION) {
-                PertenenciasDAO.delete(pertenenciaId);
-=======
             int bitacoraid = (int) table.getValueAt(selectedRow, 4);
             int confirm = JOptionPane.showConfirmDialog(null, "¿Está seguro de eliminar esta pertenencia?", "Eliminar Pertenencia", JOptionPane.YES_NO_OPTION);
             if (confirm == JOptionPane.YES_OPTION) {
                 PertenenciasDAO.delete(pertenenciaId, bitacoraid);
->>>>>>> b36e289 (Problemas arreglados)
                 loadPertenencias();
             }
         } else {

@@ -6,13 +6,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
 import java.util.ArrayList;
-<<<<<<< HEAD
-import java.util.List;
-=======
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
->>>>>>> b36e289 (Problemas arreglados)
 
 public class UsersDAO {
 
@@ -213,8 +209,6 @@ public class UsersDAO {
 
         return user;
     }
-<<<<<<< HEAD
-=======
     
     
         public static Map<String, Object> findUserAndRole(int userId) {
@@ -230,7 +224,6 @@ public class UsersDAO {
         }
         return null;
     };
->>>>>>> b36e289 (Problemas arreglados)
 
     public static void update(Users user) {
         try {

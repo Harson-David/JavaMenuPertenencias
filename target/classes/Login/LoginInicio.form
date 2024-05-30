@@ -54,11 +54,7 @@
                           <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-<<<<<<< HEAD
-                  <EmptySpace pref="135" max="32767" attributes="0"/>
-=======
                   <EmptySpace pref="106" max="32767" attributes="0"/>
->>>>>>> b36e289 (Problemas arreglados)
               </Group>
               <Group type="102" attributes="0">
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -122,11 +118,7 @@
               <Color blue="cc" green="cc" red="0" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-<<<<<<< HEAD
-              <Font name="Segoe UI" size="24" style="0"/>
-=======
               <Font name="Segoe UI" size="24" style="1"/>
->>>>>>> b36e289 (Problemas arreglados)
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
@@ -162,11 +154,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
-<<<<<<< HEAD
-            <Property name="text" type="java.lang.String" value="Ingreso SENA TIC"/>
-=======
             <Property name="text" type="java.lang.String" value="INGRESO SENA TIC"/>
->>>>>>> b36e289 (Problemas arreglados)
           </Properties>
         </Component>
       </SubComponents>

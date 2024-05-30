@@ -69,12 +69,6 @@ public class MenuTest extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String actionCommand = e.getActionCommand();
         switch (actionCommand) {
-<<<<<<< HEAD
-            case "Usuarios" -> showUsersPanel();
-            case "Programas" -> showProgramasPanel();
-            case "Bitácora" -> showBitacoraPanel();
-            case "Pertenencias" -> showPertenenciasPanel();
-=======
             case "Usuarios" ->
                 showUsersPanel();
             case "Programas" ->
@@ -83,7 +77,6 @@ public class MenuTest extends JFrame implements ActionListener {
                 showBitacoraPanel();
             case "Pertenencias" ->
                 showPertenenciasPanel();
->>>>>>> b36e289 (Problemas arreglados)
             case "Salir" -> {
                 AdminLogin adm = new AdminLogin();
                 adm.setLocationRelativeTo(null);
@@ -93,13 +86,7 @@ public class MenuTest extends JFrame implements ActionListener {
         }
     }
 
-<<<<<<< HEAD
-    
-    
-        private void showUsersPanel() {
-=======
     private void showUsersPanel() {
->>>>>>> b36e289 (Problemas arreglados)
         UsersPanelTest usersPanel = new UsersPanelTest();
         usersPanel.setLocationRelativeTo(null);
         usersPanel.setVisible(true);
@@ -123,11 +110,6 @@ public class MenuTest extends JFrame implements ActionListener {
         pertenenciasPanel.setVisible(true);
         dispose();
     }
-<<<<<<< HEAD
-    
-=======
-
->>>>>>> b36e289 (Problemas arreglados)
     public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {

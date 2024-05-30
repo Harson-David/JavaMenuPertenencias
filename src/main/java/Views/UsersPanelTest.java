@@ -1,10 +1,7 @@
 package Views;
 
-<<<<<<< HEAD
-=======
 import Login.SelectRol;
 import Login.SelectUser;
->>>>>>> b36e289 (Problemas arreglados)
 import Models.MenuTest;
 import Models.Users;
 import Models.UsersDAO;
@@ -13,8 +10,6 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.util.List;
-<<<<<<< HEAD
-=======
 import java.util.Map;
 import usersEdit_Informacion.AdminEdit;
 import usersEdit_Informacion.AprendizEdit;
@@ -26,7 +21,6 @@ import usersEdit_Informacion.UserAprendizEdit;
 import usersEdit_Informacion.UserExternoEdit;
 import usersEdit_Informacion.UserFuncionarioEdit;
 import usersEdit_Informacion.UserInstructorEdit;
->>>>>>> b36e289 (Problemas arreglados)
 
 public class UsersPanelTest extends JFrame {
 
@@ -96,37 +90,6 @@ public class UsersPanelTest extends JFrame {
     }
 
     private void addUser() {
-<<<<<<< HEAD
-        // Solicitar los datos al usuario utilizando JOptionPane
-        String userIdStr = JOptionPane.showInputDialog("ID de usuario:");
-        int userId = Integer.parseInt(userIdStr);
-        String userRolStr = JOptionPane.showInputDialog("Rol de usuario (APRENDIZ, INSTRUCTOR, FUNCIONARIO, EXTERNO):");
-        Users.UserRole userRol = UsersDAO.mapToUserRole(userRolStr);
-        String typeDocumentStr = JOptionPane.showInputDialog("Tipo de documento (CC, TI, CE, PASAPORTE):");
-        Users.UserTypeDocument typeDocument = UsersDAO.mapToUserTypeDocument(typeDocumentStr);
-        String password = JOptionPane.showInputDialog("Contraseña:");
-        String name = JOptionPane.showInputDialog("Nombre:");
-        String lastName = JOptionPane.showInputDialog("Apellido:");
-        String numContactStr = JOptionPane.showInputDialog("Número de contacto:");
-        int numContact = Integer.parseInt(numContactStr);
-        String address = JOptionPane.showInputDialog("Dirección:");
-        String email = JOptionPane.showInputDialog("Correo electrónico:");
-        String jornada = JOptionPane.showInputDialog("Jornada:");
-        String tipoFormacion = JOptionPane.showInputDialog("Tipo de formación:");
-        String centroFormacion = JOptionPane.showInputDialog("Centro de formación:");
-        String coordinacion = JOptionPane.showInputDialog("Coordinación:");
-        String numFichaStr = JOptionPane.showInputDialog("Número de ficha:");
-        int numFicha = Integer.parseInt(numFichaStr);
-        String formacionStr = JOptionPane.showInputDialog("Formación:");
-        int formacion = Integer.parseInt(formacionStr);
-        String cargoActual = JOptionPane.showInputDialog("Cargo actual:");
-        String lugarProcedencia = JOptionPane.showInputDialog("Lugar de procedencia:");
-
-       
-        Users user = new Users(userId, userRol, typeDocument, password, name, lastName, numContact, address, email, jornada, tipoFormacion, centroFormacion, coordinacion, numFicha, formacion, cargoActual, lugarProcedencia);
-        UsersDAO.create(user);
-        loadUsers();
-=======
         try {
             SelectUser rol = new SelectUser();
             rol.setLocationRelativeTo(null);
@@ -136,7 +99,6 @@ public class UsersPanelTest extends JFrame {
             System.err.println("Error al abrir la ventana EleccionRol: " + ex.getMessage());
             ex.printStackTrace();
         }
->>>>>>> b36e289 (Problemas arreglados)
     }
 
     private void editUser() {
@@ -144,45 +106,6 @@ public class UsersPanelTest extends JFrame {
         if (selectedRow >= 0) {
             int userId = (int) table.getValueAt(selectedRow, 0);
 
-<<<<<<< HEAD
-            Users user = UsersDAO.findOne(userId);
-
-            String password = JOptionPane.showInputDialog("Nueva Contraseña:");
-            String name = JOptionPane.showInputDialog("Nuevo Nombre:");
-            String lastName = JOptionPane.showInputDialog("Nuevo Apellido:");
-            String numContactStr = JOptionPane.showInputDialog("Nuevo Número de contacto:");
-            int numContact = Integer.parseInt(numContactStr);
-            String address = JOptionPane.showInputDialog("Nueva Dirección:");
-            String email = JOptionPane.showInputDialog("Nuevo Correo electrónico:");
-            String jornada = JOptionPane.showInputDialog("Nueva Jornada:");
-            String tipoFormacion = JOptionPane.showInputDialog("Nuevo Tipo de formación:");
-            String centroFormacion = JOptionPane.showInputDialog("Nuevo Centro de formación:");
-            String coordinacion = JOptionPane.showInputDialog("Nueva Coordinación:");
-            String numFichaStr = JOptionPane.showInputDialog("Nuevo Número de ficha:");
-            int numFicha = Integer.parseInt(numFichaStr);
-            String formacionStr = JOptionPane.showInputDialog("Nueva Formación:");
-            int formacion = Integer.parseInt(formacionStr);
-            String cargoActual = JOptionPane.showInputDialog("Nuevo Cargo actual:");
-            String lugarProcedencia = JOptionPane.showInputDialog("Nuevo Lugar de procedencia:");
-
-            user.setPassword(password);
-            user.setName(name);
-            user.setLastName(lastName);
-            user.setNumContact(numContact);
-            user.setAddress(address);
-            user.setEmail(email);
-            user.setJornada(jornada);
-            user.setTipoFormacion(tipoFormacion);
-            user.setCentroFormacion(centroFormacion);
-            user.setCoordinacion(coordinacion);
-            user.setNumFicha(numFicha);
-            user.setFormacion(formacion);
-            user.setCargoActual(cargoActual);
-            user.setLugarProcedencia(lugarProcedencia);
-
-            UsersDAO.update(user);
-            loadUsers();
-=======
             Map<String, Object> userAndRole = UsersDAO.findUserAndRole(userId);
 
             if (userAndRole != null) {
@@ -226,7 +149,6 @@ public class UsersPanelTest extends JFrame {
                 JOptionPane.showMessageDialog(null, "No se encontró información del usuario.");
             }
 
->>>>>>> b36e289 (Problemas arreglados)
         } else {
             JOptionPane.showMessageDialog(null, "Debe seleccionar un usuario para editar.");
         }
@@ -298,11 +220,7 @@ public class UsersPanelTest extends JFrame {
         if (selectedRow >= 0) {
             return (int) table.getValueAt(selectedRow, 0);
         } else {
-<<<<<<< HEAD
-            return -1; 
-=======
             return -1;
->>>>>>> b36e289 (Problemas arreglados)
         }
     }
 
@@ -313,11 +231,7 @@ public class UsersPanelTest extends JFrame {
             Users user = UsersDAO.findOne(userId);
             return user;
         } else {
-<<<<<<< HEAD
-            return null; 
-=======
             return null;
->>>>>>> b36e289 (Problemas arreglados)
         }
     }
 

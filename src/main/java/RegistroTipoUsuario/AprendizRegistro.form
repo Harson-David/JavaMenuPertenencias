@@ -23,14 +23,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-<<<<<<< HEAD
-          <Group type="102" alignment="0" attributes="0">
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-          </Group>
-=======
           <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
->>>>>>> b36e289 (Problemas arreglados)
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -56,17 +49,10 @@
               <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-<<<<<<< HEAD
-                          <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="label1" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-=======
                           <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                                   <Component id="label1" min="-2" max="-2" attributes="0"/>
->>>>>>> b36e289 (Problemas arreglados)
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="label4" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -78,38 +64,6 @@
                                           <Component id="label8" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-<<<<<<< HEAD
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="tipoDocumento" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                              <Component id="numDocuemnto" alignment="1" min="-2" pref="149" max="-2" attributes="0"/>
-                                              <Component id="label2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="label7" min="-2" max="-2" attributes="0"/>
-                                          <Component id="tipoFormacion" min="-2" pref="152" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="label5" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="label3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="apellido" min="-2" pref="152" max="-2" attributes="0"/>
-                                      <Component id="contraseña" min="-2" pref="152" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="ficha" min="-2" pref="152" max="-2" attributes="0"/>
-                                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="centroFormacion" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="label9" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Component id="label10" alignment="0" min="-2" max="-2" attributes="0"/>
-=======
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="label5" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -146,7 +100,6 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="label7" min="-2" max="-2" attributes="0"/>
                                       <Component id="tipoFormacion" min="-2" pref="152" max="-2" attributes="0"/>
->>>>>>> b36e289 (Problemas arreglados)
                                   </Group>
                               </Group>
                           </Group>
@@ -183,11 +136,7 @@
                           <Component id="button2" min="-2" pref="231" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-<<<<<<< HEAD
-                  <EmptySpace pref="100" max="32767" attributes="0"/>
-=======
                   <EmptySpace pref="106" max="32767" attributes="0"/>
->>>>>>> b36e289 (Problemas arreglados)
               </Group>
           </Group>
         </DimensionLayout>

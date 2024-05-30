@@ -21,8 +21,7 @@ public class ControllerPertenencias {
         return pertenenciasDAO.findAll();
     }
 
-    public Pertenencias findOne(String pertenenciaId) {
-        return pertenenciasDAO.findOne(pertenenciaId);
+
     public Pertenencias findOne(String pertenenciaId, int bitacoraId) {
         return pertenenciasDAO.findOne(pertenenciaId, bitacoraId);
     }
@@ -31,8 +30,6 @@ public class ControllerPertenencias {
         pertenenciasDAO.updatePer(pertenencia);
     }
 
-    public void delete(String pertenenciaId) {
-        pertenenciasDAO.delete(pertenenciaId);
     public void delete(String pertenenciaId, int bitacoraId) {
         pertenenciasDAO.delete(pertenenciaId, bitacoraId);
     }
